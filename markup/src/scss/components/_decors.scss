@@ -1,0 +1,36 @@
+$ellipse-color: #dbe8f2;
+
+
+
+.decor {
+    // Colors
+    $bg-color: transparent;
+    $dot-color: #c5def2;
+
+    // Dimensions
+    $dot-size: 3px;
+    $dot-space: 13px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 168px;
+    height: 136px;
+    // background:
+    //     linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+    //     linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    //     $dot-color;
+    // background-size: $dot-space $dot-space;
+
+    background-color: $bg-color;
+    background-image: radial-gradient(circle, $dot-color 20%, transparent 10%), radial-gradient(circle, $dot-color 20%, transparent 10%);
+    background-size: 17px 17px;
+    background-position: 0 0, 0 0;
+}
+
+.ellipse{
+    fill: $ellipse-color;
+    transform: rotate(45deg);
+    width: 433px;
+    height: 142px;
+}

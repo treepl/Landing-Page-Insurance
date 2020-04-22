@@ -7,7 +7,7 @@
 @import 'base/mixins';
 // @import 'base/helpers';
 $global-flexbox: true;
-// $button-responsive-expanded: true; 
+// $button-responsive-expanded: true;  
 
 // Global styles
 @include foundation-global-styles;
@@ -77,7 +77,11 @@ $global-flexbox: true;
 // Icon Pro fonts
 // @import 'vendors/fontawesome_pro/fontawesome'; 
 
+@import 'components/buttons';
+@import 'components/decors';
 
+@import 'layout/header';
+@import 'layout/common';
 
   
 

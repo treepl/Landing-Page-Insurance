@@ -1,0 +1,62 @@
+[id="header"] {
+
+    position: relative;
+
+    .button {
+        margin: 0;
+    }
+
+    .anchor-btn {
+        margin-left: 10px;
+        white-space: nowrap;
+
+        @include breakpoint(large) {
+            margin-left: 66px;
+        }
+    }
+
+    .holder{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background: $body-background;
+    }
+}
+
+.menu {
+    text-transform: uppercase;
+    font-weight: 600;
+
+    a {
+        color: inherit;
+    }
+}
+
+.nav-holder {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(medium) {}
+}
+
+.dropdown.menu>li>a {
+    @include breakpoint(large) {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+.navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    font-size: rem-calc(16);
+
+    @include breakpoint(medium) {
+        position: static;
+        box-shadow: none;
+    }
+}
+
+@include menu-expand;

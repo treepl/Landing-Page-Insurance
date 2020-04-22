@@ -4,21 +4,76 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.min.css">
-    
-    
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.js"></script> 
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/js/foundation.min.js"></script>
-    
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="js/jquery.main.js"></script>
     <title>Title</title>
 </head>
 
 <body>
-    <h3>header</h3>
+    <header id="header">
+    
+        <div class="header-area" data-sticky-container>
+            <div class="holder" data-sticky data-options="marginTop:0;">
+                <div class="grid-container">
+                    <div class="top-bar main-top-bar">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="images/logo.png" alt="Logotype" >
+                            </a>
+                        </div>
+                        
+                        <div class="nav-holder">
+                            <nav class="main_nav navigation" id="main-menu" aria-label="navigation">
+                                <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-animate="someAnimationIn someAnimationOut">
+                                    <li class="active">
+                                        <a href="home.html" title="Home" accesskey="1" >home </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Services" >Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="FAQ" >FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Testimonials">Testimonials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="About">About</a>
+                                       
+                                    </li>
+                                </ul>
+                            </nav>
+                            <a href="#" class="button anchor-btn">Get a quote</a>
+                            <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+                                <button class="menu-icon" type="button"  aria-label="menu-open" data-toggle="main-menu"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <main id="main">
+        <div class="visual-banner">
+            <div class="img-box">
+                <img src="images/visual-01.jpg" alt="">
+            </div>
+            <div class="container">
+                <div class="text-block">
+                    <h1>Get Insurance Policy and <span class="color">Save 20%</span></h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <span class="decor">
+                    <svg class="ellipse" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" fill="#f00">
+                        <ellipse cx="100" cy="50" rx="100" ry="50" />
+                    </svg>
+                </span>
+            </div>
+        </div>
         <h1>main</h1>
     </main>
     <h3>footer</h3>
