@@ -149,20 +149,20 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    'h1': ('font-size': 30),
+    'h2': ('font-size': 18),
+    'h3': ('font-size': 16),
+    'h4': ('font-size': 15),
+    'h5': ('font-size': 14),
+    'h6': ('font-size': 13),
   ),
-  medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
+  large: (
+    'h1': ('font-size': 40),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 18),
+    'h4': ('font-size': 17),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 14),
   ),
 );
 $header-text-rendering: optimizeLegibility;
@@ -202,8 +202,8 @@ $abbr-underline: 1px dotted $black;
 // 5. Typography Helpers
 // ---------------------
 
-$lead-font-size: $global-font-size * 1.25;
-$lead-lineheight: 1.6;
+$lead-font-size: rem-calc(16);
+$lead-lineheight: 1.9;
 $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;

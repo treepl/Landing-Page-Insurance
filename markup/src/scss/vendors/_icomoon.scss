@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon/icomoon.eot?t2u100');
+    src:  url('../fonts/icomoon/icomoon.eot?t2u100#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon/icomoon.woff2?t2u100') format('woff2'),
+      url('../fonts/icomoon/icomoon.ttf?t2u100') format('truetype'),
+      url('../fonts/icomoon/icomoon.woff?t2u100') format('woff'),
+      url('../fonts/icomoon/icomoon.svg?t2u100#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-contract:before {
+    content: "\e900";
+  }
+  .icon-diamond-1:before {
+    content: "\e901";
+  }
+  .icon-dog:before {
+    content: "\e902";
+  }
+  .icon-facebook-f-brands:before {
+    content: "\e903";
+  }
+  .icon-flood:before {
+    content: "\e904";
+  }
+  .icon-graph:before {
+    content: "\e905";
+  }
+  .icon-hand-shake:before {
+    content: "\e906";
+  }
+  .icon-heartbeat:before {
+    content: "\e907";
+  }
+  .icon-instagram-brands:before {
+    content: "\e908";
+  }
+  .icon-medicine-briefcase:before {
+    content: "\e909";
+  }
+  .icon-phone-alt-light:before {
+    content: "\e90a";
+  }
+  .icon-planning:before {
+    content: "\e90b";
+  }
+  .icon-property:before {
+    content: "\e90c";
+  }
+  .icon-quote-1:before {
+    content: "\e90d";
+  }
+  .icon-rental:before {
+    content: "\e90e";
+  }
+  .icon-right-arrow:before {
+    content: "\e90f";
+  }
+  .icon-support:before {
+    content: "\e910";
+  }
+  .icon-travel-insurance:before {
+    content: "\e911";
+  }
+  .icon-twitter-brands:before {
+    content: "\e912";
+  }
+  .icon-umbrella:before {
+    content: "\e913";
+  }
+  .icon-youtube-brands:before {
+    content: "\e914";
+  }
+  .icon-airplane:before {
+    content: "\e915";
+  }
+  .icon-best:before {
+    content: "\e916";
+  }
+  .icon-check-circle-regular:before {
+    content: "\e917";
+  }
+  

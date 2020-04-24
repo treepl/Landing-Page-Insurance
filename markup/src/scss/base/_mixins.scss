@@ -261,3 +261,10 @@ $animation-speed: .3s !default;
   font-size: ($pxSize / 16px) + rem;
 }
 
+
+// convert px to vw
+// Use:   font-size: get-vw(72px);
+@function get-vw($target) { 
+  $vw-context: (1920*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}

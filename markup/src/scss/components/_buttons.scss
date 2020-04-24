@@ -1,7 +1,51 @@
+.button{
+
+    &:hover,
+    &:focus{
+        .arrow-icon {
+            width: 22px;
+            margin-right: 0;
+        }
+    }
+    .arrow-icon {
+        $arrow-indent: 2px;
+        height: 1px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        position: relative;
+        background: $white;
+        margin: 0 7px;
+       transition: margin $animation-speed ease-in-out, width $animation-speed ease-in-out;
+    
+    
+        &:before,
+        &:after {
+            content: "";
+            width: 1px;
+            height: 7px;
+            background: $white;
+            position: absolute;
+            left: calc(100% - #{$arrow-indent});
+        }
+    
+        &:before {
+            top:calc(100% - #{$arrow-indent});
+            transform: rotate(45deg);
+        }
+    
+        &:after {
+            bottom: calc(100% - #{$arrow-indent});
+            transform: rotate(-45deg);
+        }
+    }
+}
+
 .button.secondary {
 
     &,
-    &:hover {
+    &:hover,
+    &:focus {
         color: $button-color;
     }
 

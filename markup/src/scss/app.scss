@@ -5,7 +5,7 @@
 @import '../../node_modules/motion-ui/motion-ui'; 
  
 @import 'base/mixins';
-// @import 'base/helpers';
+@import 'base/helpers';
 $global-flexbox: true;
 // $button-responsive-expanded: true;  
 
@@ -76,6 +76,10 @@ $global-flexbox: true;
 
 // Icon Pro fonts
 // @import 'vendors/fontawesome_pro/fontawesome'; 
+
+
+// Icomoon icons
+@import 'vendors/icomoon'; 
 
 @import 'components/buttons';
 @import 'components/decors';
