@@ -1,0 +1,54 @@
+.faqs-accordion {
+    align-items: flex-start;
+
+    .accordion-item {
+        border-radius: $global-radius;
+        margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba($black, 0.5);
+        transition: background $animation-speed ease-in-out, color $animation-speed ease-in-out;
+
+        &:hover {
+            color: $white;
+            background: $success-color;
+
+            .icon-block{
+                color: inherit;
+            }
+        }
+    }
+
+    .accordion-title {
+        & {
+            border-radius: $global-radius;
+        }
+
+        &:before {
+            font-family: "icomoon";
+        }
+    }
+
+    .icon-block {
+        @include size(67px);
+        font-size: rem-calc(33);
+        border-radius: 50%;
+        border: 2px dashed $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 rem-calc(20);
+        color: $primary-color;
+
+        i {
+            color: inherit;
+        }
+    }
+
+    h3 {
+        color: inherit;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: inherit;
+    }
+}

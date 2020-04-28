@@ -26,6 +26,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-minus-solid:before {
+    content: "\e918";
+  }
+  .icon-plus-solid:before {
+    content: "\e919";
+  }
   .icon-contract:before {
     content: "\e900";
   }

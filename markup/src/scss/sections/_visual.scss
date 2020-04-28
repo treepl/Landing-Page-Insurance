@@ -1,0 +1,222 @@
+.visual-banner {
+    background: $light-gray;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    position: relative;
+    padding: 40px 0;
+
+    @include breakpoint(large) {
+        padding: 95px 0 70px;
+
+    }
+
+    .image-block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba($color: $light-gray, $alpha: 0.5);
+
+            @include breakpoint(medium) {
+                display: none;
+            }
+        }
+
+        @include breakpoint(medium) {
+            top: -100px;
+            right: -100px;
+            left: auto;
+            bottom: auto;
+            z-index: 0;
+            max-width: 60%;
+            text-align: right;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+
+        }
+
+        @include breakpoint(xlarge) {
+            right: get-vw(-159px);
+            top: get-vw(-390px);
+            max-width: get-vw(1233px);
+
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+            @include breakpoint(medium) {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .holder {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+
+        &:after {
+            @include breakpoint(medium) {
+                content: "";
+                // min-height: 611px;
+                width: 1px;
+            }
+
+            @include breakpoint(xlarge) {
+                min-height: 604px;
+            }
+        }
+
+    }
+
+    .text-block {
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(medium) {
+            max-width: 50%;
+        }
+
+        @include breakpoint(large) {
+            max-width: 470px;
+        }
+    }
+
+    .color {
+        color: $primary-color;
+    }
+
+    .lead {
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(large) {
+            margin-bottom: rem-calc(50);
+        }
+    }
+
+    h1 {
+        text-transform: uppercase;
+        line-height: 1.2;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(40);
+        }
+
+        @include breakpoint(large) {
+            font-size: rem-calc(56);
+            margin-bottom: rem-calc(18);
+        }
+
+    }
+
+    .decor-dots {
+        $dots-position: get-vw(86px);
+        width: 168px;
+        height:  136px;
+        top:  get-vw(286px);
+        right: calc(100% - #{ $dots-position});
+    }
+
+    .decor-ellipse {
+        width: get-vw(500px);
+        left: get-vw(-339px);
+        top: get-vw(182px);
+    }
+
+}
+
+.advantages-list {
+    @extend %listreset;
+    color: $white;
+    background: $primary-color;
+    padding: rem-calc(30) rem-calc(20) rem-calc(23);
+    border-radius: 91px 91px 0 91px;
+    max-width: 1290px;
+    position: relative;
+    z-index: 1;
+    margin: 0 10px;
+
+    @include breakpoint(medium) {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        border-radius: 91px 91px 0 91px;
+        // padding: rem-calc(30) rem-calc(45) rem-calc(23);
+
+    }
+
+    @include breakpoint(large) {
+        padding: rem-calc(50) rem-calc(45) rem-calc(40);
+    }
+
+    li {
+        display: flex;
+        padding-left: rem-calc(10);
+        padding-right: rem-calc(10);
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(medium) {
+            max-width: 374px;
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(large) {
+            padding-left: rem-calc(15);
+            padding-right: rem-calc(15);
+
+        }
+
+    }
+
+    .icon-block {
+        @include size(50px);
+        flex-shrink: 0;
+        border: 2px dotted $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: rem-calc(15);
+
+        @include breakpoint(medium) {
+            @include size(60px);
+        }
+
+        @include breakpoint(large) {
+            @include size(77px);
+            margin-right: rem-calc(27);
+        }
+    }
+
+    i {
+        font-size: rem-calc(25);
+        line-height: 1;
+
+        @include breakpoint(medium) {
+            font-size: rem-calc(32);
+        }
+
+        @include breakpoint(large) {
+            font-size: rem-calc(40);
+        }
+    }
+
+    .h3 {
+        text-transform: uppercase;
+        font-weight: 600;
+        // margin-bottom: rem-calc(10);
+    }
+}

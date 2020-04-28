@@ -12,9 +12,8 @@ $dot-color: rgba($primary-color, .2);
 
     position: absolute;
     top: 0;
-    left: 0;
     width: 168px;
-    height: 136px;
+    height:  136px;
     background-color: $bg-color;
     background-image: radial-gradient(circle, $dot-color 20%, transparent 10%), radial-gradient(circle, $dot-color 20%, transparent 10%);
     background-size: 17px 17px;
@@ -22,11 +21,42 @@ $dot-color: rgba($primary-color, .2);
 }
 
 .decor-ellipse{
-    fill: $ellipse-color;
-    // transform: rotate(45deg);
-    width: 433px;
-    height: 142px;
-    position: absolute;
     top: 0;
-    left: 0;
+    position: absolute;
+    fill: $ellipse-color;
+    width: 30vw;
+    padding-bottom: 100%;
+    overflow: hidden;
+    pointer-events: none;
+
+    .svg-content{
+        transform: rotate(45deg);
+    }
+}
+
+.decor-square{
+    width: 70.7%;
+    background: rgba($primary-color, .1);
+    border-radius: $global-radius;
+    position: absolute;
+    top: 15px;
+    left: -36px;
+    z-index: 0;
+    height: 100%;
+    
+    @include breakpoint(medium) {
+        top: 33px;
+        height: 100%;
+    }
+}
+
+.decor-circle{
+    @include size(136px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-radius: 50%;
+    border: 40px solid rgba($primary-color, .1);
+    z-index: 0;
 }

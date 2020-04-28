@@ -1,0 +1,92 @@
+.service-block {
+    margin-bottom: rem-calc(20);
+
+    @include breakpoint(large) {
+        margin-bottom: rem-calc(40);
+
+    }
+
+    @include breakpoint(medium) {
+        margin-bottom: rem-calc(68);
+        align-items: center;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+
+    .icon-block {
+        font-size: rem-calc(47);
+        color: $primary-color;
+        position: relative;
+        width: rem-calc(55);
+        text-align: center;
+        margin-bottom: rem-calc(15);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(28);
+        }
+
+        &:before {
+            content: "";
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba($color: $primary-color, $alpha: .2);
+            display: block;
+            margin-bottom: -24px;
+        }
+
+        .icon-property{
+            margin-top: 0;
+        }
+
+        .icon-heartbeat {
+            font-size: rem-calc(50);
+        }
+
+        .icon-airplane {
+            font-size: rem-calc(57);
+        }
+
+        i {
+            margin-top: rem-calc(-8);
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    .img-block {
+        position: relative;
+        margin-bottom: rem-calc(30);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(40);
+        }
+
+        .decor-dots {
+            @include size(201px, 165px) right: -39px;
+            top: -50px;
+        }
+
+        img {
+            display: inline-block;
+            vertical-align: top;
+            border-radius: $global-radius;
+            position: relative;
+        }
+    }
+
+    .text-block {
+        position: relative;
+
+        @include breakpoint(large) {
+            padding: 0 rem-calc(53);
+        }
+
+        p {
+            margin-bottom: rem-calc(30);
+        }
+    }
+}

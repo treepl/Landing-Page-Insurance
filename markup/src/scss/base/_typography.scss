@@ -1,0 +1,32 @@
+h1{
+    margin-bottom: rem-calc(35);
+    font-weight: 600;
+}
+
+
+ul:not([class]),
+.custom-list {
+    padding-left: 0;
+    margin-bottom: 1.3rem;
+
+    li {
+        list-style-type: none;
+        position: relative;
+        padding-left: rem-calc(23);
+        margin-bottom: 11px;
+
+        &:before {
+            content: "\e917";
+            font-family: 'icomoon';
+            font-size: rem-calc(17);
+            line-height: 1;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $primary-color;
+
+
+        }
+    }
+}
