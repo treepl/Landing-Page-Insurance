@@ -1,13 +1,13 @@
 h1{
-    margin-bottom: rem-calc(35);
     font-weight: 600;
+    margin-bottom: rem-calc(35);
 }
 
 
 ul:not([class]),
 .custom-list {
     padding-left: 0;
-    margin-bottom: 1.3rem;
+    margin:0 0 1.3rem;
 
     li {
         list-style-type: none;
@@ -29,4 +29,8 @@ ul:not([class]),
 
         }
     }
+}
+
+.primary-text{
+    color: $primary-color;
 }

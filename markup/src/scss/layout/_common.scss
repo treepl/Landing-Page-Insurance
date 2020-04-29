@@ -6,9 +6,9 @@
     padding: rem-calc(60) 0;
     overflow: hidden;
 
-    &.success{
-      background: $success-color;
-      color: $white;
+    &.success {
+        background: $success-color;
+        color: $white;
     }
 }
 
@@ -25,7 +25,7 @@
         left: 50%;
         transform: translateX(calc(-50% + -9px));
         height: 5px;
-        width:58px;
+        width: 58px;
         background-color: $secondary-color;
         outline-color: $secondary-color;
         box-shadow: 15px 0px 0px #ea4a6b;
@@ -34,6 +34,107 @@
     }
 }
 
-.custom-list{
-    
+.custom-list {
+
+    @include breakpoint(large) {
+        column-count: 2;
+    }
+}
+
+.info-banner {
+    @include breakpoint(large) {
+        padding: 72px 0;
+    }
+
+    .text {
+
+        @include breakpoint(medium) {
+            padding-top: 15px;
+        }
+    }
+
+    h1 {
+        margin-bottom: rem-calc(15);
+    }
+
+    p {
+        margin-bottom: rem-calc(24);
+    }
+}
+
+.half-bg{
+    position: relative;
+     &:after{
+         content:"";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $light-gray;
+        z-index: -1;
+     }
+}
+
+.radius-wrap {
+    margin: 0 auto;
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height: rem-calc(383);
+    padding: rem-calc(30) rem-calc(10);
+    color: $white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px 50px 0 50px;
+    overflow: hidden;
+    max-width: calc(100% - 20px);
+
+    @include breakpoint(medium) {
+        padding:  rem-calc(50) rem-calc(30);
+        max-width: calc(100% - 30px);
+    }
+
+    @include breakpoint(large) {
+        // margin: 0 auto;
+        border-radius: 1000px 1000px 0 1000px;
+    }
+
+    @include breakpoint(xxlarge) {
+        max-width: 1672px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba($color: $black, $alpha: 0.3);
+    }
+
+    .grid-x {
+        
+        align-items: center;
+    }
+
+
+    .text {
+        flex-grow: 1;
+    }
+
+    .button {
+        flex-shrink: 0;
+    }
+
+    h1{
+        margin-bottom: 10px;
+    }
+}
+
+.bg-section{
+    background: $light-gray;
 }

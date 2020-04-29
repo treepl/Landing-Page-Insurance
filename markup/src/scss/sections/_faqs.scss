@@ -1,30 +1,50 @@
-.faqs-accordion {
-    align-items: flex-start;
+.faqs-open-close {
+    padding: 24px 29px 10px;
+    position: relative;
+    border-radius: $global-radius;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 10px rgba($black, .07);
+    transition: background $animation-speed ease , color $animation-speed ease ;
 
-    .accordion-item {
-        border-radius: $global-radius;
-        margin-bottom: 30px;
-        box-shadow: 0 0 10px rgba($black, 0.5);
-        transition: background $animation-speed ease-in-out, color $animation-speed ease-in-out;
+    @include breakpoint(large) {
+        padding: 34px 39px 15px;
+    }
 
-        &:hover {
+    &:hover {
+        color: $white;
+        background: $success-color;
+
+        .icon-block {
             color: $white;
-            background: $success-color;
-
-            .icon-block{
-                color: inherit;
-            }
         }
     }
 
-    .accordion-title {
-        & {
-            border-radius: $global-radius;
+    &:before {
+        content: '\e919';
+        font-family: "icomoon";
+        font-size: rem-calc(20);
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        
+        @include breakpoint(large) {
+            top: 32px;
+            right: 41px;
         }
+    }
 
-        &:before {
-            font-family: "icomoon";
+    &.active{
+        &:before{
+            content: '\e918';
         }
+    }
+    
+
+    .opener {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        border-radius: $global-radius;
     }
 
     .icon-block {
@@ -37,6 +57,7 @@
         justify-content: center;
         margin: 0 0 rem-calc(20);
         color: $primary-color;
+        transition: color $animation-speed ease;
 
         i {
             color: inherit;
@@ -46,6 +67,7 @@
     h3 {
         color: inherit;
         text-transform: uppercase;
+        margin-bottom: 12px;
     }
 
     a {
