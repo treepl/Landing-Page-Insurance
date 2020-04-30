@@ -351,12 +351,12 @@ $callout-link-tint: 30%;
 
 $card-background: $white;
 $card-font-color: $body-font-color;
-$card-divider-background: $light-gray;
+$card-divider-background: none;
 $card-border: 1px solid $light-gray;
-$card-shadow: none;
+$card-shadow: 0 0 20px rgba($black, 0.07);
 $card-border-radius: $global-radius;
-$card-padding: $global-padding;
-$card-margin-bottom: $global-margin;
+$card-padding: rem-calc(50) rem-calc(30)  rem-calc(30) rem-calc(110);
+$card-margin-bottom: rem-calc(30);
 
 // 15. Close Button
 // ----------------

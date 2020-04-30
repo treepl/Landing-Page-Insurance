@@ -3819,11 +3819,11 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   flex-direction: column;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 2.14286rem;
   border: 1px solid #f3f3f3;
   border-radius: 8px;
   background: #fefefe;
-  box-shadow: none;
+  box-shadow: 0 0 20px rgba(10, 10, 10, 0.07);
   overflow: hidden;
   color: #222; }
   .card > :last-child {
@@ -3834,15 +3834,15 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   display: flex;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 1rem;
-  background: #f3f3f3; }
+  padding: 3.57143rem 2.14286rem 2.14286rem 7.85714rem;
+  background: none; }
   .card-divider > :last-child {
     margin-bottom: 0; }
 
 .card-section {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  padding: 1rem; }
+  padding: 3.57143rem 2.14286rem 2.14286rem 7.85714rem; }
   .card-section > :last-child {
     margin-bottom: 0; }
 
@@ -13258,6 +13258,9 @@ ul:not([class]),
   border-radius: 50%;
   border: 40px solid rgba(11, 137, 238, 0.1);
   z-index: 0; }
+  .decor-circle.left {
+    left: -67px;
+    right: auto; }
 
 .animateBlock {
   -webkit-transform: translateY(50px);
@@ -13413,6 +13416,19 @@ li {
     outline-color: #ea4a6b;
     box-shadow: 15px 0px 0px #ea4a6b;
     border-right: 5px solid #fefefe; }
+  .main-title.text-left {
+    text-align: left; }
+    .main-title.text-left:before {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      left: 0; }
+  .main-title.text-right {
+    text-align: right; }
+    .main-title.text-right:before {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      left: auto;
+      right: 0; }
 
 @media print, screen and (min-width: 64em) {
   .custom-list {
@@ -13681,34 +13697,6 @@ li {
   .service-block:nth-child(even) {
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
-  .service-block .icon-block {
-    font-size: 3.35714rem;
-    color: #0b89ee;
-    position: relative;
-    width: 3.92857rem;
-    text-align: center;
-    margin-bottom: 0.71429rem; }
-    @media print, screen and (min-width: 48em) {
-      .service-block .icon-block {
-        margin-bottom: 2rem; } }
-    .service-block .icon-block:before {
-      content: "";
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: rgba(11, 137, 238, 0.2);
-      display: block;
-      margin-bottom: -24px; }
-    .service-block .icon-block .icon-property {
-      margin-top: 0; }
-    .service-block .icon-block .icon-heartbeat {
-      font-size: 3.57143rem; }
-    .service-block .icon-block .icon-airplane {
-      font-size: 4.07143rem; }
-    .service-block .icon-block i {
-      margin-top: -0.57143rem;
-      display: inline-block;
-      vertical-align: top; }
   .service-block .img-block {
     position: relative;
     margin-bottom: 2.14286rem; }
@@ -13720,6 +13708,10 @@ li {
       height: 165px;
       right: -39px;
       top: -50px; }
+      .service-block .img-block .decor-dots.left-position {
+        right: auto;
+        top: -20px;
+        left: -49px; }
     .service-block .img-block img {
       display: inline-block;
       vertical-align: top;
@@ -13732,6 +13724,45 @@ li {
         padding: 0 3.78571rem; } }
     .service-block .text-block p {
       margin-bottom: 2.14286rem; }
+  .service-block h1 {
+    margin-bottom: 0.85714rem; }
+
+.circle-icons {
+  font-size: 3.35714rem;
+  line-height: 1;
+  color: #0b89ee;
+  position: relative;
+  width: 3.92857rem;
+  text-align: center;
+  margin-bottom: 0.71429rem; }
+  @media print, screen and (min-width: 48em) {
+    .circle-icons {
+      margin-bottom: 2rem; } }
+  .circle-icons:before {
+    content: "";
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(11, 137, 238, 0.2);
+    display: block;
+    margin-bottom: -24px; }
+  .circle-icons .icon-property {
+    margin-top: 0; }
+  .circle-icons .icon-heartbeat {
+    font-size: 3.57143rem; }
+  .circle-icons .icon-airplane {
+    font-size: 4.07143rem; }
+  .circle-icons i {
+    margin-top: -0.57143rem;
+    display: inline-block;
+    vertical-align: top; }
+
+.card {
+  position: relative; }
+  .card .circle-icons {
+    position: absolute;
+    top: 35px;
+    left: 35px; }
 
 .faqs-open-close {
   padding: 24px 29px 10px;
@@ -13872,3 +13903,12 @@ li {
   .testimonials .position {
     color: #8a8a8a;
     font-style: normal; }
+
+.signature {
+  -ms-flex-align: center;
+  align-items: center; }
+  .signature .name {
+    display: block; }
+
+.text-block {
+  position: relative; }
