@@ -13395,9 +13395,14 @@ li {
 .section {
   padding: 4.28571rem 0;
   overflow: hidden; }
-  .section.success {
-    background: #0a426f;
-    color: #fefefe; }
+
+.success-bg {
+  background: #0a426f;
+  color: #fefefe; }
+
+.white-bg {
+  background: #fefefe;
+  color: #222; }
 
 .main-title {
   text-align: center;
@@ -13912,3 +13917,24 @@ li {
 
 .text-block {
   position: relative; }
+
+.contact-section {
+  position: relative;
+  color: #fefefe; }
+  .contact-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.6); }
+  .contact-section .info-block {
+    border-radius: 8px 0 0 8px;
+    padding: 30px; }
+    .contact-section .info-block + .info-block {
+      border-radius: 0 8px 8px 0; }
+
+.contacts-area {
+  max-width: 970px;
+  margin: 0 auto; }

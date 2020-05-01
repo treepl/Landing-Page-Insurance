@@ -6,10 +6,16 @@
     padding: rem-calc(60) 0;
     overflow: hidden;
 
-    &.success {
-        background: $success-color;
-        color: $white;
-    }
+}
+
+.success-bg {
+    background: $success-color;
+    color: $white;
+}
+
+.white-bg {
+    background: $white;
+    color: $body-font-color;
 }
 
 
