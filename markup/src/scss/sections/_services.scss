@@ -1,3 +1,25 @@
+.services-wrap {
+    .decor-border-square {
+        bottom: 4px;
+        right: 62px;
+    }
+
+    .decor-ellipse {
+        width: 500px;
+        right: -371px;
+        top: 162px;
+        z-index: -1;
+    }
+
+    .decor-dots {
+        width: 168px;
+        height: 136px;
+        top: 132px;;
+        left: calc(100% - 48px);
+        z-index: -1;
+    }
+}
+
 .service-block {
     margin-bottom: rem-calc(20);
 
@@ -33,6 +55,7 @@
             @include size(201px, 165px);
             right: -39px;
             top: -50px;
+            left: auto;
 
             &.left-position {
                 right: auto;

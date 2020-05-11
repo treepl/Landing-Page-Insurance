@@ -26,6 +26,24 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-envelope:before {
+    content: "\e91f";
+  }
+  .icon-map-marker:before {
+    content: "\e920";
+  }
+  .icon-instagram:before {
+    content: "\e91b";
+  }
+  .icon-youtube:before {
+    content: "\e91c";
+  }
+  .icon-twitter:before {
+    content: "\e91d";
+  }
+  .icon-facebook:before {
+    content: "\e91e";
+  }
   .icon-minus-solid:before {
     content: "\e918";
   }
@@ -107,4 +125,3 @@
   .icon-check-circle-regular:before {
     content: "\e917";
   }
-  

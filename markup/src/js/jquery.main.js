@@ -3,8 +3,16 @@ jQuery(function () {
    initAnimate();
    initFaqsAccordion();
    initTestimonialCarousel();
+   initAnchors();
 });
 
+
+function initAnchors() {
+	new SmoothScroll({
+		anchorLinks: 'a[href^="#"]:not([href="#"])',
+		activeClasses: 'link'
+	});
+}
 
 function initAnimate() {
    var condition = $('.animateBlock').size()

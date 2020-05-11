@@ -14,49 +14,50 @@
 </head>
 
 <body>
-    <header id="header">
-    
-        <div class="header-area" data-sticky-container>
-            <div class="holder" data-sticky data-options="marginTop:0;">
-                <div class="grid-container">
-                    <div class="top-bar main-top-bar">
-                        <div class="logo">
-                            <a href="/">
-                                <img src="images/logo.png" alt="Logotype" >
-                            </a>
-                        </div>
-                        
-                        <div class="nav-holder">
-                            <nav class="main_nav navigation" id="main-menu" aria-label="navigation">
-                                <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-animate="someAnimationIn someAnimationOut">
-                                    <li class="active">
-                                        <a href="home.html" title="Home" accesskey="1" >home </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Services" >Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="FAQ" >FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Testimonials">Testimonials</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="About">About</a>
-                                       
-                                    </li>
-                                </ul>
-                            </nav>
-                            <a href="#" class="button anchor-btn">Get a quote</a>
-                            <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                                <button class="menu-icon" type="button"  aria-label="menu-open" data-toggle="main-menu"></button>
+    <div id="wrapper">
+        <header id="header">
+        
+            <div class="header-area" data-sticky-container>
+                <div class="holder" data-sticky data-options="marginTop:0;">
+                    <div class="grid-container">
+                        <div class="top-bar main-top-bar">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="images/logo.png" alt="Logotype" >
+                                </a>
+                            </div>
+                            
+                            <div class="nav-holder">
+                                <nav class="main_nav navigation" id="main-menu" aria-label="navigation">
+                                    <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-animate="someAnimationIn someAnimationOut">
+                                        <li >
+                                            <a href="#wrapper" title="Home" accesskey="1" >home </a>
+                                        </li>
+                                        <li>
+                                            <a href="#services" title="Services" >Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="#faq" title="FAQ" >FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#testimonials" title="Testimonials">Testimonials</a>
+                                        </li>
+                                        <li>
+                                            <a href="#about" title="About">About</a>
+                                           
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <a href="#get-quote" class="button anchor-btn">Get a quote</a>
+                                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+                                    <button class="menu-icon" type="button"  aria-label="menu-open" data-toggle="main-menu"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     <main id="main">
         <section class="visual-banner">
             <div class="image-block">
@@ -111,7 +112,7 @@
             </div>
 
         </section>
-        <section class="section">
+        <section class="section services-wrap" id="services">
             <div class="grid-container ">
                 <h1 class="main-title animateBlock">Our Services</h1>
                 <div class="service-wrap">
@@ -125,7 +126,7 @@
                         <div class="cell medium-6 fadeInRight animateBlock">
                             <div class="text-block">
                                 <div class="circle-icons">
-                                    <i class="icon icon-heartbeat"></i>
+                                    <i class="icon icon-property"></i>
                                 </div>
                                 <h2>Property Insurance</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate porta elit. Quisque interdum finibus sem, vitae viverra sem pellentesque et. Curabitur laoreet congue ante facilisis auctor. Mauris eget turpis eu turpis. Nam elementum, velit ac posuere fermentum, turpis sem eleifend eros, in iaculis ligula magna ut turpis. </p>
@@ -170,8 +171,14 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+            <span class="decor-dots"></span>
+            <div class="decor-ellipse">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="250" cy="250" rx="250" ry="186"></ellipse>
+                </svg>
+            </div>
+            <span class="decor-border-square"></span>
         </section>
         <section class="section success-bg info-banner">
             <div class="grid-container">
@@ -201,9 +208,11 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section" id="faq">
             <div class="grid-container">
-                <h1 class="main-title animateBlock">FAQ</h1>
+                <div class="main-title animateBlock">
+                    <h1>FAQ</h1>
+                </div>
                 <div class="grid-x grid-margin-x faqAccordion">
                     <div class="cell medium-6">
                         <div class="faqs-open-close  fadeInLeft animateBlock">
@@ -295,12 +304,12 @@
                 <div class="grid-container">
                     <div class="grid-x grid-margin-x">
                         <div class="cell medium-8 large-9">
-                            <div class="text">
+                            <div class="text animateBlock">
                                 <h1>Find the best solution for insurance</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam. Maecenas aliquam lorem vitae orci elementum, nec dignissim felis egestas. Sed elit enim, condimentum at neque sit amet, condimentum faucibus est. Sed ultrices arcu nulla, sed iaculis nunc gravida ac. Ut lectus magna, tincidunt eu orci aliquam, pellentesque porttitor diam.</p>
                             </div>
                         </div>
-                        <div class="cell medium-4 large-3 text-right">
+                        <div class="cell medium-4 large-3 text-right animateBlock">
                             <a href="" class="button secondary">
                                 Get a quote
                                 <i class="arrow-icon"></i>
@@ -312,10 +321,12 @@
         </section>
         <section class="section bg-section">
             <div class="grid-container">
-                <h1 class="main-title animateBlock">What our clients say</h1>
-                <p>Donec eget consequat diam. Duis convallis placerat dapibus. Donec scelerisque sem non scelerisque rutrum. Cras vestibulum ultrices purus sed congue. Nulla accumsan felis quis diam finibus mattis. In hac habitasse platea dictumst. Sed dictum risus sed aliquet vulputate.</p>
+                <div class="main-title">
+                    <h1 class="animateBlock">What our clients say</h1>
+                    <p class="animateBlock">Donec eget consequat diam. Duis convallis placerat dapibus. Donec scelerisque sem non scelerisque rutrum. Cras vestibulum ultrices purus sed congue. Nulla accumsan felis quis diam finibus mattis. In hac habitasse platea dictumst. Sed dictum risus sed aliquet vulputate.</p>
+                </div>
             </div>
-            <div class="testimonials testimonialSliderHolder">
+            <div class="testimonials testimonialSliderHolder" id="testimonials">
                 <div class="slide">
                     <div class="holder">
                         <div class="photo">
@@ -366,19 +377,26 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section about-section" id="about">
+            <span class="decor-dots"></span>
+            <div class="decor-ellipse">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="250" cy="250" rx="250" ry="186"></ellipse>
+                </svg>
+            </div>
+            <span class="decor-border-square"></span>
             <div class="grid-container">
                 <div class="grid-x grid-margin-x service-block">
-                    <div class="cell medium-6">
-                        <div class="img-block fadeInLeft animateBlock animate_start">
+                    <div class="cell medium-6 ">
+                        <div class="img-block fadeInLeft animateBlock">
                             <span class="decor-dots left-position"></span>
                             <img src="images/img-04.jpg" alt="">
                         </div>
                     </div>
-                    <div class="cell medium-6 fadeInRight animateBlock animate_start">
-                        <div class="text-block">
+                    <div class="cell medium-6 fadeInRight animateBlock">
+                        <div class="text-block ">
                             <h1>About Us</h1>
-                            <h2>SECURE THE FUTURE, PROTECT WHAT'S IMPORTANT</h2>
+                            <h3>SECURE THE FUTURE, PROTECT WHAT'S <br> IMPORTANT</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="signature grid-x grid-margin-x ">
                                 <div class="cell large-6">
@@ -394,9 +412,9 @@
                 </div>
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-4">
-                        <div class="text-block">
+                        <div class="text-block animateBlock fadeInLeft">
                             <span class="decor-circle left"></span>
-                            <h1 class="main-title text-left animateBlock">Benefits of Buying Health Insurance</h1>
+                            <h1 class="main-title text-left ">Benefits of Buying Health Insurance</h1>
                             <p>Donec eget consequat diam. Duis convallis placerat dapibus. Donec scelerisque sem non scelerisque rutrum. Cras vestibulum</p>
                             <a href="" class="button secondary">
                                 Get a quote
@@ -404,10 +422,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="large-8">
+                    <div class="cell large-8">
                         <div class="grid-x grid-margin-x">
                             <div class="cell medium-6">
-                                <div class="card">
+                                <div class="card animateBlock">
                                     <div class="card-section ">
                                         <div class="circle-icons">
                                             <i class="icon icon-support"></i>
@@ -418,7 +436,7 @@
                                 </div>
                             </div>
                             <div class="cell medium-6">
-                                <div class="card">
+                                <div class="card animateBlock">
                                     <div class="card-section ">
                                         <div class="circle-icons">
                                             <i class="icon icon-umbrella"></i>
@@ -429,7 +447,7 @@
                                 </div>
                             </div>
                             <div class="cell medium-6">
-                                <div class="card">
+                                <div class="card animateBlock">
                                     <div class="card-section ">
                                         <div class="circle-icons">
                                             <i class="icon icon-contract"></i>
@@ -440,7 +458,7 @@
                                 </div>
                             </div>
                             <div class="cell medium-6">
-                                <div class="card">
+                                <div class="card animateBlock">
                                     <div class="card-section ">
                                         <div class="circle-icons">
                                             <i class="icon icon-graph"></i>
@@ -454,39 +472,49 @@
                     </div>
                 </div>
             </div>
+
         </section>
-        <section class="section contact-section" style="background-image: url(images/visual-03.jpg);">
+        <section class="section contact-section" style="background-image: url(images/visual-03.jpg);" id="get-quote">
             <div class="grid-container">
-                <h1 class="main-title">Get in Touch</h1>
-                <p class="text-center">Donec eget consequat diam uis convallis placerat</p>
+                <div class="main-title animateBlock">
+                    <h1>Get in Touch</h1>
+                    <p>Donec eget consequat diam uis convallis placerat</p>
+                </div>
                 <div class="contacts-area">
                     <div class="grid-x">
-                        <div class="cell large-6 white-bg info-block">
-                            <h3>Get a free quote</h3>
+                        <div class="cell large-6 white-bg info-block fadeInRight animateBlock">
+                            <h2>Get a free quote</h2>
                             <form action="#" class="contact-form">
                                 <input type="text" placeholder="Name">
                                 <input type="text" placeholder="Phone">
                                 <input type="email" placeholder="Email address">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                                <textarea name="" id="" cols="30" rows="3" placeholder="Message"></textarea>
                                 <a href="" class="button secondary" type="submit">
                                     Get a quote
                                     <i class="arrow-icon"></i>
                                 </a>
                             </form>
                         </div>
-                        <div class="cell large-6 success-bg info-block">
-                            <h2>What will be next?</h2>
-                            <ul>
-                                <li>Cras eu justo congue elit convallis/li>
-                                <li>Maecenas aliquam lorem vitae orci elementum</li>
-                                <li>Sed ultrices arcu nulla, sed iaculis nunc gravida</li>
-                            </ul>
-                            <h2>100% Satisfaction <span class="color">Guaranteed</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam aecenas aliquam </p>
+                        <div class="cell large-6 success-bg info-block fadeInLeft animateBlock">
+                            <div class="area">
+                                <h2>What will be next?</h2>
+                                <ul>
+                                    <li>Cras eu justo congue elit convallis/li>
+                                    <li>Maecenas aliquam lorem vitae orci elementum</li>
+                                    <li>Sed ultrices arcu nulla, sed iaculis nunc gravida</li>
+                                </ul>
+                            </div>
+                            <div class="area">
+                                <h2>100% Satisfaction <span class="color">Guaranteed</span></h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam aecenas aliquam </p>
+                            </div>
                             <h2><span class="color">Have any Questions?</span></h2>
                             <p>Ask us anything, we’d love to answer!</p>
                             <ul class="contact-list">
-                                <li><a href="tel:+13056773952">+1 (305) 677-3952</a></li>
+                                <li>
+                                    <i class="icon icon-phone-alt-light"></i>
+                                    <a href="tel:+13056773952">+1 (305) 677-3952</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -494,7 +522,67 @@
             </div>
         </section>
     </main>
-    <h3>footer</h3>
+    <footer id="footer">
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-4 large-4">
+                    <div class="logo">
+                        <a href="#"><img src="/images/logo.png" alt=""></a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam.</p>
+                    <ul class="social-networks">
+                        <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon icon-instagram"></i></a></li>
+                        <li><a href="#"><i class="icon icon-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-2 large-2">
+                    <h3>Products</h3>
+                    <nav class="add-nav">
+                        <ul>
+                            <li><a href="#">Property Insurance</a></li>
+                            <li><a href="#">Health Insurance</a></li>
+                            <li><a href="#">Travel Insurance</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="cell small-12 medium-2 large-3">
+                    <h3>Company</h3>
+                    <nav class="add-nav">
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="cell small-12 medium-4 large-3">
+                    <h3>Contact</h3>
+    
+                    <ul class="contacts">
+                        <li> <i class="icon icon-map-marker"></i>
+                            <address>
+                                Example Street, Example City 123 Miami FL 33127, USA
+                            </address>
+                        </li>
+                        <li>
+                            <i class="icon icon-phone-alt-light"></i>
+                            <a href="tel:+1 (305) 677-3952">+1 (305) 677-3952</a>
+                        </li>
+                        <li>
+                            <i class="icon icon-envelope"></i>
+                            <a href="mailto:example@example.com">example@example.com</a>
+                        </li>
+                    </ul>
+    
+                </div>
+            </div>
+        </div>
+        <div class="footer-row">
+            <p>&copy; Insurance 2020. All Rights Reserved.</p>
+        </div>
+    </footer>
+    </div>
 </body>
 
 </html>

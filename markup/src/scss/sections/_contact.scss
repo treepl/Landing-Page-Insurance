@@ -12,17 +12,42 @@
         background: rgba($black, .6);
     }
 
-    .info-block{
+    .info-block {
         border-radius: $global-radius 0 0 $global-radius;
-        padding: 30px;
+        padding: rem-calc(43) rem-calc(40);
 
-        + .info-block{
-            border-radius:  0 $global-radius $global-radius 0;
+        +.info-block {
+            border-radius: 0 $global-radius $global-radius 0;
+        }
+
+        h2 {
+            margin-bottom: rem-calc(14);
         }
     }
+
+    .area {
+        margin-bottom: rem-calc(42);
+    }
+
+
 }
 
 .contacts-area {
     max-width: 970px;
     margin: 0 auto;
+}
+
+.contact-list {
+    @extend %listreset;
+    font-weight: 600;
+
+    i {
+        color: $primary-color;
+        display: inline-block;
+        margin-right: rem-calc(5);
+    }
+
+    a {
+        color: inherit;
+    }
 }
