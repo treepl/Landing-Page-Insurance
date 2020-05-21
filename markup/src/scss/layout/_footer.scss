@@ -36,13 +36,13 @@
     }
 }
 
-.footer-row{
+.footer-row {
     text-align: center;
     padding: 10px 10px;
-    border-top: 1px solid rgba($color: $primary-color, $alpha: 0.15); 
+    border-top: 1px solid rgba($color: $primary-color, $alpha: 0.15);
     color: rgba($color: $success-color, $alpha: 0.5);
 
-    p{
+    p {
         margin: 0;
     }
 }
@@ -91,6 +91,10 @@
 
             &:before {
                 display: none;
+            }
+
+            &.selected a {
+                color: $primary-color;
             }
         }
     }

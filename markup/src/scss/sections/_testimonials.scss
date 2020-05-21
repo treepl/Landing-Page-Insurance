@@ -1,13 +1,7 @@
 .testimonials {
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-
-    .slide {
-        // padding: 0 15px;
-
-    }
 
     .slick-current .holder {
         transform: scale(1);
@@ -32,16 +26,19 @@
         transition: transform $animation-speed ease-in-out, opacity $animation-speed ease-in-out;
         transform: scale(.9);
         opacity: 0.7;
+        padding-top: 60px;
     }
 
     .photo {
         @include size(105px);
         border-radius: 50%;
         border: 7px solid $white;
+        margin: -60px auto;
         overflow: hidden;
-        margin: 0 auto -60px;
         position: relative;
         z-index: 1;
+        
+        
     }
 
     .blockquote {
@@ -98,7 +95,7 @@
             display: none;
         }
 
-    }
+    } 
 
     .position {
         color: $medium-gray;
