@@ -1,0 +1,5 @@
+{% if this.items.size > 0  %}
+    {% for item in this.items %}
+        {% component type:"module", source: "FAQ Question", layout:"List", filterBy:"parentid", filterValue:"{{item.id}}" %}
+    {% endfor %}
+{% endif %}

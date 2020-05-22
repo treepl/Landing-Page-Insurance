@@ -1,0 +1,114 @@
+{% component type:"shopping_cart", collectionVariable:"shoppingCartData" %}
+<div class="cms_ecommerce">
+    <h2 class="system_title align_left">Shopping Cart</h2>
+    {% if shoppingCartData.totalItemsCount > 0 %}
+    <div class="cms_ecommerce_products">
+        <table>
+            <thead>
+            <tr>
+                <th width="140"></th>
+                <th width="500">Product</th>
+                <th>Price</th>
+                <th width="52">Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in shoppingCartData.items %}
+            <tr>
+                <td data-th="Image" width="140">
+                    {% if item.smallImage.size > 0%}
+                    <img src="{{item.smallImage}}" alt="{{item.Name}}" width="97">
+                    {% endif %}
+                </td>
+                <td data-th="Product" width="500">
+                        <span class="product_name">
+                            {{item.Name}}
+                        </span>
+                    <dl>
+                        {% for attribute in item.attributes %}
+                        <dt>{{attribute.name}}:</dt>
+                        {% for option in attribute.options %}
+                        <dd>{{option.name}}</dd>
+                        {% endfor %}
+                        {% endfor %}
+                    </dl>
+                </td>
+                <td data-th="Price">{{item.unitTotalPriceHtml}}</td>
+                <td data-th="Quantity" width="52">{{item.quantityHtml}}</td>
+                <td data-th="Total">{{item.totalHtmlPrice}}</td>
+                <td width="52" data-th="Delete item">
+                    {{item.removeHtml}}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {{shoppingCartData.clearCartHtml}}
+    </div>
+    <div class="cms_row">
+        <div class="cms_col_6">
+            <h2 class="system_title align_left">Shipping Info</h2>
+            <form action="#" class="system_form">
+                {% assign destinationCountryCode = shoppingCartData.destinationCountry.code %}
+                {% if  shoppingCartData.destinationCountry.code == "" or shoppingCartData.destinationCountry.code == null%}
+                {% assign destinationCountryCode = shoppingCartData.domainCountry.code %}
+                {% endif %}
+                {% component type:"countries", collectionVariable:"" %}
+                {% component type:"shipping_options", collectionVariable:"", filteredCountry:"{{destinationCountryCode}}" %}
+                {% component type:"tax_codes", collectionVariable:"", filteredCountry:"{{destinationCountryCode}}" %}
+            </form>
+        </div>
+        <div class="cms_col_6">
+            <h2 class="system_title align_left">Summary</h2>
+            <table class="cms_ecommerce_summary system_form">
+                <tfoot>
+                <tr>
+                    <td>Order total</td>
+                    <td></td>
+                    <td width="80">{{shoppingCartData.totalPriceHtml}}</td>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <td>Shipping</td>
+                    <td></td>
+                    <td width="80">{{shoppingCartData.shippingTotalPriceHtml}}</td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td></td>
+                    <td width="80">{{shoppingCartData.subTotalPriceHtml}}</td>
+                </tr>
+                <tr>
+                    <td>Discount Code</td>
+                    <td class="align_right"> {{shoppingCartData.discountCodeHtml}} </td>
+                    <td width="80"><button class="system_button">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Voucher Code</td>
+                    <td class="align_right"> {{shoppingCartData.giftVoucherHtml}} </td>
+                    <td width="80"><button class="system_button">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Discount</td>
+                    <td></td>
+                    <td>{{shoppingCartData.discountPriceHtml}}</td>
+                </tr>
+                <tr>
+                    <td>Voucher</td>
+                    <td></td>
+                    <td width="80">{{shoppingCartData.giftVoucherPriceHtml}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="align_right">
+                {{shoppingCartData.checkoutButtonHtml}}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h5>Shopping cart is empty.</h5>
+    {% endif %}
+</div>

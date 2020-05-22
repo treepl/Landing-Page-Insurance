@@ -1,0 +1,15 @@
+{% assign isSelected = "" %}
+{% if request.request_url.path == item.itemUrl %}
+    {% assign isSelected = "selected" %}
+{% endif -%}
+<li{% if item.itemId != null %} id="{{item.itemId}}"
+    {% endif -%}{% if item.itemClass != null or isSelected != null %} 
+    class="{{item.itemClass}} {{isSelected}}" {% endif -%}
+    {% if item.itemCustomAttribute != null %}
+    {{item.itemCustomAttribute}}{% endif -%}>
+	<a href="{{item.itemUrl}}"
+	{% if item.itemTargetFrame != null %}
+	target="{{item.itemTargetFrame}}"{% endif -%} {% if item.itemTitle != "" %}
+	title="{{item.itemTitle}}" {% endif -%}>{{item.itemName}}</a>
+    {% include "/Content/MenuLayouts/{{this.alias}}/{{this.layoutGroup}}/sub_items.layout" %}
+</li>

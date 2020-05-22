@@ -1,0 +1,12 @@
+<div class="cms_ecommerce">
+    {% component type: "shopping_cart" %}
+        <h1>{{this['Name']}}</h1>
+        <div class="catalogs_list">
+                {% component source: "Catalogs", layout: "List", filterBy: "parentid", filterValue: "{{this.Id}}", type: "module" %}
+        </div>
+        <div class="cms_products_list">
+            <div class="cms_row">
+               {% component source: "Products",  filterBy: "parentid", filterValue: "{{this.Id}}", layout: "List", limit: "500", type: "module" %}
+            </div>
+        </div>
+    </div>

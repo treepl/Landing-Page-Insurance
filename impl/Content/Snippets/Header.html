@@ -1,0 +1,22 @@
+<header id="header">
+    <div class="header-area" data-sticky-container>
+        <div class="holder" data-sticky data-options="marginTop:0;">
+            <div class="grid-container">
+                <div class="top-bar main-top-bar">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="{{siteinformation.site_settings.logo}}" alt="Main Logo" >
+                        </a>
+                    </div>
+                    <div class="nav-holder">
+                         {% component type: "menu", alias: "main_navigation", layoutGroup: "Main" %}
+                        <a href="#get-quote" class="button anchor-btn">Get a quote</a>
+                        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+                            <button class="menu-icon" type="button"  aria-label="menu-open" data-toggle="main-menu"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

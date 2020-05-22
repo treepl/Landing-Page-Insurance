@@ -1,0 +1,47 @@
+<footer id="footer">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-12 medium-4 large-4">
+                <div class="logo">
+                    <a href="/"><img src="{{siteinformation.site_settings.logo}}" alt="Logotype"></a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam.</p>
+                <ul class="social-networks">
+                    <li><a href="{{si.sn.f}}"><i class="icon icon-facebook"></i><span class="show-for-sr">facebook</span></a></li>
+                    <li><a href="{{si.sn.t}}"><i class="icon icon-twitter"></i><span class="show-for-sr">twitter</span></a></li>
+                    <li><a href="{{si.sn.i}}"><i class="icon icon-instagram"></i><span class="show-for-sr">instagram</span></a></li>
+                    <li><a href="{{si.sn.y}}"><i class="icon icon-youtube"></i><span class="show-for-sr">youtube</span></a></li>
+                </ul>
+            </div>
+            <div class="cell small-12 medium-2 large-2">
+                <h3>Quick Links</h3>
+               {% component type: "menu", alias: "quick_links", layoutGroup: "Default" %}
+            </div>
+            <div class="cell small-12 medium-2 large-3">
+                <h3>Company</h3>
+                {% component type: "menu", alias: "footer_navigation", layoutGroup: "Default" %}
+            </div>
+            <div class="cell small-12 medium-4 large-3">
+                <h3>Contact</h3>
+                <ul class="contacts">
+                    <li>
+                         <i class="icon icon-map-marker"></i>
+                        <address>{{si.c.a}}</address>
+                    </li>
+                    <li>
+                        <i class="icon icon-phone-alt-light"></i>
+                        <a href="tel:{{siteinformation.contacts.phone | remove:  '-' | remove: '+' | remove: ' '}}">{{siteinformation.contacts.phone}}</a>
+                    </li>
+                    <li>
+                        <i class="icon icon-envelope"></i>
+                        <a href="mailto:{{si.c.e}}">{{si.c.e}}</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-row">
+        <p>{{si.s.c}} {{ "now" | date: "%Y" }}. All Rights Reserved.</p>
+    </div>
+</footer>

@@ -1,0 +1,11 @@
+<div class="shoppingCartWidget" data-ecommerce_shopping_cart_widget>
+    <div class="cms_cart_widget fl_left not_empty" style="display:{% if this.totalItemsCount > 0 %}block{% else %}none{% endif %};">
+        <h5>Your Order</h5>
+        <p><span data-ecommerce_shopping_cart_widget_items_count>{{this.totalItemsCount}}</span> item(s), Total: <span data-ecommerce_shopping_cart_widget_total_price>{{this.totalPrice | domain_money_format }}</span> </p>
+        <a href="/shopping_cart" class="system_button shoppingCartLink">View Cart</a>
+    </div>
+    <div class="cms_cart_widget fl_left empty"  style="display:{% if this.totalItemsCount > 0 %}none{% else %}block{% endif %};">
+        <h5>Shopping cart is empty.</h5>
+    </div>
+</div>
+

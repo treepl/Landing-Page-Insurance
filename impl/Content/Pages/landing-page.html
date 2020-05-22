@@ -1,0 +1,61 @@
+<section class="visual-banner">
+    {% component source: "Main visual", layout: "List", filterBy: "id", filterValue: "1887", limit: "1", enablePagination: "false", type: "module" %}
+    <div class="grid-container full">
+        <ul class="advantages-list animateBlock">
+            {% component source: "Advantages", layout: "List", limit: "3", enablePagination: "false", type: "module" %}
+        </ul>
+    </div>
+    <span class="decor-dots"></span>
+    <div class="decor-ellipse">
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="250" cy="250" rx="250" ry="186" />
+        </svg>
+    </div>
+</section>
+{% component type: "snippet", alias: "service_section" %}
+{% component type: "snippet", alias: "dark_section" %}
+{% component type: "snippet", alias: "faqs_section" %}
+{% component type: "snippet", alias: "background_section" %}
+{% component type: "snippet", alias: "testimonials_section" %}
+{% component type: "snippet", alias: "about_section" %}
+<section class="section contact-section" style="background-image: url(/images/visual-03.jpg);" id="get-quote">
+    <div class="grid-container">
+        <div class="main-title animateBlock">
+            <h1>Get in Touch</h1>
+            <p>Donec eget consequat diam uis convallis placerat</p>
+        </div>
+        <div class="contacts-area">
+            <div class="grid-x">
+                <div class="cell large-6 white-bg info-block fadeInRight animateBlock">
+                    <h2>Get a free quote</h2>
+                    {% component type: "form", alias: "quote_form" %}
+                </div>
+                <div class="cell large-6 success-bg info-block fadeInLeft animateBlock">
+                    <div class="area">
+                        <h2>What will be next?</h2>
+                        <ul>
+                            <li>Cras eu justo congue elit convallis/li>
+                            <li>Maecenas aliquam lorem vitae orci elementum</li>
+                            <li>Sed ultrices arcu nulla, sed iaculis nunc gravida</li>
+                        </ul>
+                    </div>
+                    <div class="area">
+                        <h2>100% Satisfaction <span class="color">Guaranteed</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu justo congue elit convallis aliquam aecenas aliquam </p>
+                    </div>
+                    <h2><span class="color">Have any Questions?</span></h2>
+                    <p>Ask us anything, we’d love to answer!</p>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="icon icon-phone-alt-light"></i>
+                            <a href="tel:{{siteinformation.contacts.phone | remove:  '-' | remove: '+' | remove: ' ' | remove:  '(' | remove:  ')'}}">{{siteinformation.contacts.phone}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        

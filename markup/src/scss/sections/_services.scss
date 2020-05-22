@@ -1,7 +1,13 @@
 .services-wrap {
     .decor-border-square {
+
         bottom: 4px;
-        right: 62px;
+        right: -70px;
+
+        @include breakpoint(medium) {
+            right: 62px;
+
+        }
     }
 
     .decor-ellipse {
@@ -14,9 +20,38 @@
     .decor-dots {
         width: 168px;
         height: 136px;
-        top: 132px;;
+        top: 132px;
         left: calc(100% - 48px);
         z-index: -1;
+    }
+
+    .decor-circle.alt {
+        left: -180px;
+        bottom: 40px;
+        top: auto;
+        right: auto;
+        width: 204px;
+        height: 204px;
+        border-width: 60px;
+        transform: none;
+
+        @include breakpoint(medium) {
+            left: -100px;
+            bottom: 300px;
+
+        }
+    }
+
+    .decor-dots.alt {
+        top: auto;
+        left: -98px;
+        right: auto;
+        bottom: 253px;
+        display: none;
+
+        @include breakpoint(medium) {
+            display: block;
+        }
     }
 }
 

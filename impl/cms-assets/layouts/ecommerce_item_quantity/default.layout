@@ -1,0 +1,1 @@
+<input type="number" data-ecommerce_product_quantity_field="{{this.id}}" value="1"/>

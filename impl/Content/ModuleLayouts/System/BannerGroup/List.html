@@ -1,0 +1,5 @@
+{% if this.items.size > 0  %}
+    {% for item in this.items %}
+        {% component type:"module", source: "Banner", layout:"List", random:"true", limit: "1", filterBy:"parentid", filterValue:"{{item.id}}" %}
+    {% endfor %}
+{% endif %}

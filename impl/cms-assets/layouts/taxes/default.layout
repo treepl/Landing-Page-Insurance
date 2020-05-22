@@ -1,0 +1,8 @@
+<div class="cms_fake_select">
+    <select data-cms_cart_tax_codes="">
+        <option value="">Please select</option>
+        {% for item in this.items %}
+        <option value="{{item.id}}" {% if  shoppingCartData.taxCodeId == item.id %} selected="true" {% endif %}>{{item.taxCode}} ({{item.amount}}%)</option>
+        {% endfor %}
+    </select>
+</div>

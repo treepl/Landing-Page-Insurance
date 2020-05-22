@@ -1,0 +1,14 @@
+<form class="contact-form" action="/forms/cases.ashx?form=quote_form" name="quote_form"  method="post" enctype="multipart/form-data">
+    <label for="FirstName" class="show-for-sr">Name</label>
+	<input type="text" id="FirstName" name="FirstName"   placeholder="Name">
+	<label for="Phone" class="show-for-sr">Phone</label>
+	<input type="text" id="Phone" name="Phone"  placeholder="Phone" >
+	<label for="Email" class="show-for-sr">Email</label>
+	<input type="email" id="Email" name="Email"  placeholder="Email address" required>
+	<label for="Notes" class="show-for-sr">Notes</label>
+	<textarea id="Notes" name="Notes" cols="30" rows="3" placeholder="Message" ></textarea>
+	<script>
+     grecaptcha.ready(function() {var theForm = document.querySelector('.g-recaptcha-response-v3-{{this.Alias}}').closest('form');if(theForm != null){var allowRecaptchaExecution = true;var submitCounter = 0;theForm.onsubmit = function(){if(allowRecaptchaExecution){submitCounter++;allowRecaptchaExecution = false;executeRecaptcha(function(){theForm.submit();});return false;}else if(submitCounter > 0){submitCounter++;}if(submitCounter > 1){alert('Form submission is in progress.');return false;}}}else{executeRecaptcha();}	function executeRecaptcha(callback){   grecaptcha.execute('6Ld5QIoUAAAAAKznGOlK7z6mgqJ8ajRUc3CK5M17', { action: 'general_form_{{this.Alias | replace: "-","_"}}'}).then(function(token){document.querySelector('.g-recaptcha-response-v3-{{this.Alias}}').value = token;if(callback){callback();}});}}); 	</script>
+        <input type="hidden" class="g-recaptcha-response-v3-{{this.Alias}}" name="g-recaptcha-response-v3">
+	<button class="button secondary" type="submit"> Get a quote<i class="arrow-icon"></i></button>
+</form>

@@ -1,0 +1,6 @@
+<div class="cms_col_6 cms_ecommerce_catalog">
+     {% if this['ThumbnailImage'].size > 0  %}
+        <a href="{{this['Url']}}" class="cms_ecommerce_image"><img src="{{this['ThumbnailImage']}}" alt="{{this['Name']}}"></a>
+    {% endif %}
+    <h2><a href="{{this['Url']}}">{{this['Name']}}</a></h2>
+</div>

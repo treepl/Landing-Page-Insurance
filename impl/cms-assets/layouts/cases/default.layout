@@ -1,0 +1,8 @@
+<ul>
+    {% for item in this.items %}
+        <li> 
+            <strong>{{item.formName}}</strong>        
+            <span>Date Submission: {{item.dateSubmission | format_date: "dddd, MMMM dd, yyyy"}}</span>  
+        </li>
+    {% endfor %}
+</ul>

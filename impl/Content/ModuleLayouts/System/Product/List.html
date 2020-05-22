@@ -1,0 +1,19 @@
+<div class="cms_col_4 cms_ecommerce_product">
+    {% if this['SmallImage'].size > 0 %}
+        <a href="{{this['Url']}}" class="cms_ecommerce_image">
+            <img src="{{this['SmallImage']}}" alt="{{this['Name']}}">
+        </a>
+    {% endif %}
+    <h2><a href="{{this['Url']}}">{{this['Name']}}</a></h2>
+    <div class="product_price">
+        <span class="product_current_value">
+            {% component type:"domain_settings", collectionVariable: "domainSetting" %}
+            {{domainSetting.FormatSetting.Currency.Symbol}}
+            {{this.PriceHtml}}
+        </span>
+    </div>
+    {% component source: "Products", itemId: "{{this.Id}}", type: "item_attributes" %}
+    {% component itemId: "{{this.Id}}", type: "ecommerce_item_quantity" %}
+    {% component itemId: "{{this.Id}}", type: "ecommerce_add_to_cart" %}
+    <a href="{{this['Url']}}" class="system_button">Details</a>
+</div>

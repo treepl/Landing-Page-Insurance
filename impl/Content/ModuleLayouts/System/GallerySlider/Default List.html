@@ -1,0 +1,10 @@
+<link media="all" rel="stylesheet" href="/cms-assets/css/main.css">
+<link media="all" rel="stylesheet" href="/cms-assets/css/jquery.fancybox.min.css">
+<script type="text/javascript">if(!window.__trpGalleryScriptInited){var headTag=document.getElementsByTagName("head")[0],jfbTag=document.createElement("script");if(jfbTag.type="text/javascript",jfbTag.src="/cms-assets/js/jquery.fancybox.min.js","undefined"==typeof jQuery&&"undefined"==typeof $){var jqTag=document.createElement("script");jqTag.type="text/javascript",jqTag.src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",headTag.appendChild(jqTag),headTag.appendChild(jfbTag)}else"undefined"!=typeof jQuery&&null!=jQuery.fancybox||"undefined"!=typeof $&&null!=$.fancybox||headTag.appendChild(jfbTag);window.__trpGalleryScriptInited=!0}</script>
+{% if this.items.size > 0  %}
+    <ul class="system_galleries">
+        {% for item in this.items %}
+            {% component type:"module", source: "Slide", layout:"{{this.params['sliderLayout']}}", filterBy:"parentid", limit: '500', filterValue:"{{item.id}}" %}
+        {% endfor %}
+    </ul>
+{% endif %}

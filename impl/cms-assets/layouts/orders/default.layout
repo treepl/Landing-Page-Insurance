@@ -1,0 +1,9 @@
+<ul>
+    {% for order in this.items %}
+        <li> 
+            <strong>{{order .name}}</strong>        
+            <span>Invoice Date: {{order .invoiceDate | format_date: "dddd, MMMM dd, yyyy"}}</span>  
+            <span>Total Cost: {{order .totalPrice | set_money_format :  order.formatSetting.id}}</span>
+        </li>
+    {% endfor %}
+</ul>

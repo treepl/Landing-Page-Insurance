@@ -1,0 +1,9 @@
+<ul>
+    {% for yearData in this.years %}
+        {% for month in yearData.months %}
+            <li> 
+                <a href="{{month.url}}" title="{{yearData.name}}-{{month.name}}">{{month.name}} {{yearData.name}} ({{month.itemsCount}})</a>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>

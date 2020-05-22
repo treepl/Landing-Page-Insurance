@@ -1,0 +1,26 @@
+<div class="grid-x grid-margin-x service-block">
+    <div class="cell medium-6 fadeInLeft animateBlock">
+        <div class="img-block">
+            {% if this['Decor'] contains "Square" %}
+                <span class="decor-square"></span>
+            {% endif %}
+            {% if this['Decor'] contains "Dots" %}
+                <span class="decor-dots"></span>
+            {% endif %}
+            <img src="{{this['Image']}}?width=570" alt="">
+        </div>
+    </div>
+    <div class="cell medium-6 fadeInRight animateBlock">
+        <div class="text-block">
+            <div class="circle-icons">
+                <i class="icon icon-property"></i>
+            </div>
+            <h2>{{this['Name']}}</h2>
+            {{this['Description']}}
+            <a href="{{this['ButtonURL']}}" class="button">{{this['ButtonText']}}</a>
+             {% if this['Decor'] contains "Circle" %}
+                <span class="decor-circle"></span>
+            {% endif %}
+        </div>
+    </div>
+</div>

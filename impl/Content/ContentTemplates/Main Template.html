@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   {% include "/includes/head.inc" %}
+</head>
+
+<body>
+    <noscript>
+        <div>Javascript must be enabled for the correct page display</div>
+    </noscript>
+    <a class="show-on-focus" href="#main">Skip to Content</a>
+    <div id="wrapper">
+        {% component type: "snippet", alias: "header" %}
+        <main id="main">
+              {{pageContent}}
+        </main>
+        {% component type: "snippet", alias: "footer" %}
+    </div>
+</body>
+
+</html>
+

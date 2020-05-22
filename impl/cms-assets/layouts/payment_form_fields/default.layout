@@ -1,0 +1,4 @@
+<div id="paymentFields_{0}"></div>
+<input type="hidden" name="Payment_Data"/>
+<div id="paymentErrors_{0}" role="alert"></div>
+

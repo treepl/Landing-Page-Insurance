@@ -1,0 +1,7 @@
+<ul>
+    {% for item in this.items %}
+        <li> 
+            <a href="{{item.url}}" title="{{item.name}}">{{item.name}} <span>({{item.itemsCount}})</span></a>
+        </li>
+    {% endfor %}
+</ul>

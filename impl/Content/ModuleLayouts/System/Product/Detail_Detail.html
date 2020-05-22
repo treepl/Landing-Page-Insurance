@@ -1,0 +1,34 @@
+<div class="cms_ecommerce">
+    <div class="text_right">
+   {% component type: "shopping_cart" %}
+</div>
+    <div class="cms_ecommerce_product">
+        <h2>{{this['Name']}}</h2>
+        <div class="cms_row">
+            <div class="cms_col_4">
+                {% if this['LargeImage'].size > 0 %}
+                    <img src="{{this['LargeImage']}}" alt="{{this['Name']}}">
+                {% endif %}
+            </div>
+            <div class="cms_col_8">
+                <div class="product_price">
+                    <span class="product_current_value">
+                        {% component type:"domain_settings", collectionVariable: "domainSetting" %}
+                        {{domainSetting.FormatSetting.Currency.Symbol}}
+                        {{this.PriceHtml}}
+                    </span>
+                </div>
+                <div class="product_description">
+                    {{this['Description']}}
+                </div>
+                 {% if this.EnableInventoryControl == true %}
+                <p>In stock: {{this.InStockHtml}}</p>
+                {% endif %}
+                {% component source: "Products", itemId: "{{this.Id}}", type: "item_attributes" %}
+                {% component itemId: "{{this.Id}}", type: "ecommerce_item_quantity" %}
+                {% component itemId: "{{this.Id}}", type: "ecommerce_add_to_cart" %}
+                {% component itemId: "{{this.Id}}", type: "ecommerce_buy_now" %}                {{this.ProductDataJsonHTML}}
+            </div>
+        </div>
+    </div>
+</div>

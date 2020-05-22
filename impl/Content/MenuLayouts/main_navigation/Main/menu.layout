@@ -1,0 +1,9 @@
+{% assign level = 0 %}
+
+<nav class="main_nav navigation" id="main-menu" aria-label="navigation">
+    <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-animate="someAnimationIn someAnimationOut">
+        {% for item in this.items -%}
+    		{% include "/Content/MenuLayouts/{{this.alias}}/{{this.layoutGroup}}/item.layout" %}
+    	{% endfor -%}
+    </ul>
+</nav>
