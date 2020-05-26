@@ -1,3 +1,15 @@
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main{
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 .grid-container {
     position: relative;
 }
@@ -185,4 +197,25 @@
 
 .color{
     color: $primary-color;
+}
+
+.thank-section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-holder{
+    padding:58px 30px;
+    margin: 30px auto;
+    box-shadow: 1px 0 20px 20px rgba(0, 0, 0, 0.07);
+    border-radius: $global-radius;
+    text-align: center;
+    width: 90%;
+    
+    @include breakpoint(medium) {
+        width: 570px;
+    }
 }
