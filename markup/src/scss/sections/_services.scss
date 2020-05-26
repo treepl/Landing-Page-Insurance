@@ -63,15 +63,34 @@
         margin-bottom: 0;
     }
 
-    @include breakpoint(large) {
-        margin-bottom: rem-calc(40);
-
-    }
-
     @include breakpoint(medium) {
         margin-bottom: rem-calc(68);
         align-items: center;
     }
+
+
+    @include breakpoint(large) {
+        margin-bottom: rem-calc(40);
+    }
+
+    .service-wrap &{
+        margin-bottom: rem-calc(20);
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(68);
+        }
+
+        @include breakpoint(large) {
+            margin-bottom: rem-calc(104);
+        }
+
+        .img-block{
+            @include breakpoint(medium) {
+                margin: 0;
+            }
+        }
+    }
+
 
     &:nth-child(even) {
         flex-direction: row-reverse;

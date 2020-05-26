@@ -9,9 +9,13 @@
     .anchor-btn {
         margin-left: 10px;
         white-space: nowrap;
+        padding: rem-calc(8) rem-calc(12);
+        font-size: rem-calc(13);
 
         @include breakpoint(large) {
             margin-left: 66px;
+            padding: $button-padding;
+            font-size: 1rem;
         }
     }
 

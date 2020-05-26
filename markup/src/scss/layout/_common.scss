@@ -1,15 +1,16 @@
-#wrapper{
+#wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-#main{
+#main {
     flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
+
 .grid-container {
     position: relative;
 }
@@ -44,14 +45,14 @@
     text-align: center;
 
     &:before,
-    &:after{
-        content:"";
+    &:after {
+        content: "";
         position: absolute;
         top: 10px;
         left: 50%;
         height: 5px;
         background-color: $secondary-color;
-       
+
     }
 
     &:before {
@@ -72,6 +73,11 @@
             transform: translateX(0);
             left: 0;
         }
+
+        &:after {
+            transform: translateX(0);
+            left: 63px;
+        }
     }
 
     &.text-right {
@@ -82,9 +88,15 @@
             left: auto;
             right: 0;
         }
+
+        &:after {
+            left: auto;
+            right: 63px;
+            transform: translateX(0);
+        }
     }
 
-    h1{
+    h1 {
         margin-bottom: rem-calc(15);
     }
 }
@@ -105,6 +117,13 @@
 
         @include breakpoint(medium) {
             padding-top: 15px;
+        }
+    }
+
+    .mrgn-holder{
+        @include breakpoint(large) {
+            margin-top: 20px;
+            text-align: right;
         }
     }
 
@@ -195,27 +214,63 @@
     background: $light-gray;
 }
 
-.color{
+.color {
     color: $primary-color;
 }
 
-.thank-section{
+.thank-section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+
+    .grid-container {
+        position: relative;
+    }
+
+    .decor-dots {
+        $dots-position: get-vw(86px);
+        width: 168px;
+        height: 136px;
+        top: get-vw(286px);
+        right: calc(100% - #{ $dots-position});
+    }
+
+    .decor-ellipse {
+        width: get-vw(500px);
+        left: get-vw(-339px);
+        top: get-vw(182px);
+    }
+
+    .decor-circle {
+        position: absolute;
+        top: 61px;
+        right: -100px;
+        transform: none;
+        z-index: -1;
+    }
+
+
 }
 
-.message-holder{
-    padding:58px 30px;
+.message-holder {
+    padding: 58px 30px;
     margin: 30px auto;
     box-shadow: 1px 0 20px 20px rgba(0, 0, 0, 0.07);
     border-radius: $global-radius;
     text-align: center;
     width: 90%;
-    
+    position: relative;
+    z-index: 1;
+    background: $white;
+
+
     @include breakpoint(medium) {
         width: 570px;
     }
+}
+
+.text-wrapper{
+    margin-bottom: rem-calc(29);
 }

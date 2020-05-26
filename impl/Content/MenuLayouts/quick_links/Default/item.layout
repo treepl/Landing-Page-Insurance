@@ -7,7 +7,7 @@
     class="{{item.itemClass}} {{isSelected}}" {% endif -%}
     {% if item.itemCustomAttribute != null %}
     {{item.itemCustomAttribute}}{% endif -%}>
-	<a href="{{item.itemUrl}}"
+	<a href="{% if request.request_url.path != "/" %}&#47;{% endif %}{{item.itemUrl}}"
 	{% if item.itemTargetFrame != null %}
 	target="{{item.itemTargetFrame}}"{% endif -%} {% if item.itemTitle != "" %}
 	title="{{item.itemTitle}}" {% endif -%}>{{item.itemName}}</a>
