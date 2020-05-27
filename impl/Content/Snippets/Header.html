@@ -10,7 +10,7 @@
                     </div>
                     <div class="nav-holder">
                          {% component type: "menu", alias: "main_navigation", layoutGroup: "Main" %}
-                        <a href="#get-quote" class="button anchor-btn">Get a quote</a>
+                        <a href="{% if request.request_url.path != "/" %}&#47;{% endif %}#get-quote" class="button anchor-btn">Get a quote</a>
                         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
                             <button class="menu-icon" type="button"  aria-label="menu-open" data-toggle="main-menu"></button>
                         </div>

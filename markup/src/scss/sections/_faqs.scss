@@ -35,7 +35,7 @@
         font-size: rem-calc(20);
         position: absolute;
         top: 20px;
-        right: 10px;
+        right: 30px;
 
         @include breakpoint(large) {
             top: 32px;
@@ -55,6 +55,10 @@
         @include breakpoint(large) {
             padding: 34px 39px 15px;
         }
+    }
+
+    .title{
+        margin-right: 30px;
     }
 
 
