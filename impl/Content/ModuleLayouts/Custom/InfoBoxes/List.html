@@ -1,0 +1,13 @@
+<div class="cell medium-6">
+    <div class="card animateBlock">
+        <div class="card-section">
+            {% if this['IconHTMLTag'].size > 0%}
+                <div class="circle-icons">
+                    {{this['IconHTMLTag']}}
+                </div>
+            {% endif %}
+            <h3>{{this['Name']}}</h3>
+            {{this['Description']}}
+        </div>
+    </div>
+</div>

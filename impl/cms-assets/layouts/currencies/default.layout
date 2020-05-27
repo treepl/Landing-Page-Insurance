@@ -1,0 +1,6 @@
+<select>
+    {% for item in this.items %}
+        <option value="{{item.code}}" >{{item.name}} ({{item.symbol}})</option>
+    {% endfor %}
+</select>
+

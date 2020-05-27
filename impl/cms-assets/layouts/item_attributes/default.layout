@@ -1,0 +1,57 @@
+<form name="productAttributeForm_{{this.eCommerceItemId}}" data-ecommerce_item="{{this.eCommerceItemId}}">
+    {% for attribute in this.attributes %}
+        <h3 >{{attribute.name}}</h3>
+        {% case attribute.attributeType %}
+            {% when 'dropdown' %}
+                <div class="cms_fake_select" data-attr_group="{{attribute.id}}">
+                   <select name="attr_{{this.eCommerceItemId}}_{{attribute.id}}">
+                       <option value="">Please select</option>
+                    {% for attrOption in attribute.options %}
+                        <option value="{{attrOption.id}}" {% if attrOption.image != '' and attrOption.image != null %} style="background-image:url({{attrOption.image}});"{% endif %}>{{attrOption.name}} {{attrOption.formattedPrice}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% when 'checkbox' %}
+             <div data-attr_group="{{attribute.id}}">
+            {% for attrOption in attribute.options %}
+            <div class="cms_custom_input">
+                <label>
+                    <input type="checkbox" name="attr_{{this.eCommerceItemId}}_{{attribute.id}}" value="{{attrOption.id}}">
+                    {% if attrOption.image != '' and attrOption.image != null %}
+                        <img src="{{attrOption.image}}?width=40&height=40" width="40" height="40" title="{{attrOption.name}}" alt="{{attrOption.name}}">
+                    {% else %}
+                        <span class="cms_fake_input"></span>
+                     {% endif %}
+                    <span class="cms_fake_label">{{attrOption.name}} {{attrOption.formattedPrice}}</span>
+                </label>
+            </div>
+            {% endfor %}
+            </div>
+            {% when 'radiolist' %}
+            <div data-attr_group="{{attribute.id}}">
+                {% for attrOption in attribute.options %}
+                <div class="cms_custom_input">
+                    <label>
+                        <input type="radio" name="attr_{{this.eCommerceItemId}}_{{attribute.id}}" value="{{attrOption.id}}">
+                        {% if attrOption.image != '' and attrOption.image != null %}
+                            <img src="{{attrOption.image}}?width=40&height=40" width="40" height="40" title="{{attrOption.name}}" alt="{{attrOption.name}}">
+                        {% else %}
+                        <span class="cms_fake_input"></span>
+                        {% endif %}
+                        <span class="cms_fake_label">{{attrOption.name}} {{attrOption.formattedPrice}}</span>
+                    </label>
+                </div>
+                {% endfor %}
+                </div>
+            {% when 'numeric' %}
+                <div style="text-align: center" data-attr_group="{{attribute.id}}">{% for attrOption in attribute.options %}
+                    <label>{{attrOption.name}} {{attrOption.formattedPrice}}</label>
+                    {% if attrOption.image != '' and attrOption.image != null %}
+                        <img src="{{attrOption.image}}?width=40&height=40" width="40" height="40" alt="{{attrOption.name}}">
+                    {% endif %}
+                    <input type="number" {% if attribute.required == true %} required{% endif %} name="attr_{{this.eCommerceItemId}}_{{attribute.id}}" value="">
+                {% endfor %}</div>
+            {% else %}
+        {% endcase %}</br>
+    {% endfor %}
+</form>

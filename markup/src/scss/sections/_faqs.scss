@@ -1,0 +1,108 @@
+.faqs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    grid-gap: 30px 30px;
+
+    @include breakpoint(phone) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .faqs-open-close {
+        margin-bottom: 0;
+    }
+}
+
+.faqs-open-close {
+    position: relative;
+    border-radius: $global-radius;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 10px rgba($black, .07);
+    transition: background $animation-speed ease, color $animation-speed ease;
+
+    &:hover {
+        color: $white;
+        background: $success-color;
+
+        .icon-block {
+            color: $white;
+        }
+    }
+
+    &:before {
+        content: '\e919';
+        font-family: "icomoon";
+        font-size: rem-calc(20);
+        position: absolute;
+        top: 20px;
+        right: 10px;
+
+        @include breakpoint(large) {
+            top: 32px;
+            right: 41px;
+        }
+    }
+
+    &.active {
+        &:before {
+            content: '\e918';
+        }
+    }
+
+    &.icons .opener{
+        padding: 24px 35px 10px 29px;
+
+        @include breakpoint(large) {
+            padding: 34px 39px 15px;
+        }
+    }
+
+
+    .opener {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        border-radius: $global-radius;
+        padding: 24px 35px 10px 29px;
+
+
+        @include breakpoint(large) {
+            padding: 41px 39px 25px;
+        }
+    }
+
+    .icon-block {
+        @include size(67px);
+        font-size: rem-calc(33);
+        border-radius: 50%;
+        border: 2px dashed $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 rem-calc(20);
+        color: $primary-color;
+        transition: color $animation-speed ease;
+
+        i {
+            color: inherit;
+        }
+    }
+
+    .slide{
+        word-break: break-word;
+    }
+
+    h3 {
+        color: inherit;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+p + .faqAccordion{
+    margin-top: 25px;
+} 

@@ -59,7 +59,7 @@ $global-flexbox: true;
 @include foundation-top-bar;
 
 // Helpers
-@include foundation-float-classes;
+// @include foundation-float-classes;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
@@ -67,6 +67,7 @@ $global-flexbox: true;
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+// @include foundation-everything($prototype: true);
 
 @import '../../node_modules/foundation-sites/scss/util/color';
 
@@ -80,12 +81,26 @@ $global-flexbox: true;
 
 // Icomoon icons
 @import 'vendors/icomoon'; 
+@import 'vendors/slick';
+
+@import 'base/typography';
 
 @import 'components/buttons';
 @import 'components/decors';
+@import 'components/animate';
 
 @import 'layout/header';
 @import 'layout/common';
+@import 'layout/footer';
+
+
+@import 'sections/visual';
+@import 'sections/services';
+@import 'sections/faqs';
+@import 'sections/testimonials';
+@import 'sections/about';
+@import 'sections/contact';
+
 
   
 

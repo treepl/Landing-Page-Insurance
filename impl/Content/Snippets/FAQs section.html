@@ -1,0 +1,61 @@
+<section class="section" id="faq">
+<div class="grid-container">
+    <div class="main-title animateBlock">
+        <h1>FAQ</h1>
+    </div>
+    <div class="grid-x grid-margin-x faqAccordion">
+       {% component source: "FAQs", layout: "", limit: "500", enablePagination: "false", object: "collection", collectionVariable: "faqItems", type: "module" %}
+            {% capture oddFaqs %}
+                {% assign counter = 0 %}
+                    {% for item in faqItems.items %}
+                        {% assign part = counter | modulo: 2 %}
+                        {% if part == "0" %}
+                           <div class="faqs-open-close  fadeInLeft animateBlock">
+                                <div class="opener">
+                                    <div class="title">
+                                        <div class="icon-block">
+                                            {{item['IconHTMLTag']}}
+                                        </div>
+                                        <h3>{{item['Name']}}</h3>
+                                    </div>
+                                    <div class="slide">
+                                        {{item['Description']}}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+            {% endcapture %}
+            {% capture evenFaqs %}
+                {% assign counter = 0 %}
+                    {% for item in faqItems.items %}
+                        {% assign part = counter | modulo: 2 %}
+                        {% if part == "1" %}
+                             <div class="faqs-open-close  fadeInRight animateBlock">
+                                <div class="opener">
+                                    <div class="title">
+                                        <div class="icon-block">
+                                            {{item['IconHTMLTag']}}
+                                        </div>
+                                        <h3>{{item['Name']}}</h3>
+                                    </div>
+                                    <div class="slide">
+                                        {{item['Description']}}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                {% assign counter = counter | plus: 1 %}
+            {% endfor %}
+           {% endcapture %}
+           
+           <div class="cell medium-6">
+               {{oddFaqs}}
+           </div>
+           <div class="cell medium-6">
+               {{evenFaqs}}
+           </div>
+    </div>
+</div>
+</section>

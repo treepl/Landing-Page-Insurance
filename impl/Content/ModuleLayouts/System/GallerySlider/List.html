@@ -1,0 +1,5 @@
+{% if this.items.size > 0  %}
+    {% for item in this.items %}
+        {% component type:"module", source: "Slide", layout:"{{this.params['sliderLayout']}}", filterBy:"parentid", filterValue:"{{item.id}}" %}
+    {% endfor %}
+{% endif %}

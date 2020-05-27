@@ -1,0 +1,8 @@
+{% if item.items != null %}
+    {% assign currentItem = item -%}
+    <ul>
+        {% for item in currentItem.items -%}
+            {% include "/Content/MenuLayouts/{{this.alias}}/{{this.layoutGroup}}/item.layout" %}
+        {% endfor -%}
+    </ul>
+{% endif -%}

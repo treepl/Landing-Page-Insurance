@@ -1,0 +1,104 @@
+.testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .slick-current .holder {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .slick-arrow {
+        order: 1;
+        font-size: rem-calc(40);
+        color: #cacaca;
+        transition: coloe $animation-speed ease-in-out;
+        font-size: rem-calc(30);
+        margin: 20px 15px 20px;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+
+    .holder {
+        transition: transform $animation-speed ease-in-out, opacity $animation-speed ease-in-out;
+        transform: scale(.9);
+        opacity: 0.7;
+        padding-top: 60px;
+    }
+
+    .photo {
+        @include size(105px);
+        border-radius: 50%;
+        border: 7px solid $white;
+        margin: -60px auto;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        
+        
+    }
+
+    .blockquote {
+        position: relative;
+        background: $white;
+        border-radius: $global-radius;
+        padding: 60px 15px 37px 40px;
+        font-style: italic;
+        color: $black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+        border: 0;
+        position: relative;
+
+        @include breakpoint(medium) {
+            padding: 80px 35px 37px 80px;
+        }
+
+        &:before {
+            content: "\e90d";
+            font-family: "icomoon";
+            color: $primary-color;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            font-size: rem-calc(20);
+            font-style: normal;
+
+            @include breakpoint(medium) {
+                top: 59px;
+                left: 34px;
+                font-size: rem-calc(30)
+            }
+        }
+
+        p {
+            margin-bottom: rem-calc(10);
+
+            @include breakpoint(medium) {
+                margin-bottom: rem-calc(20);
+            }
+        }
+    }
+
+    cite {
+        display: block;
+        font-size: rem-calc(20);
+        text-transform: uppercase;
+        font-style: normal;
+        color: inherit;
+        font-weight: 600;
+
+        &:before {
+            content: "";
+            display: none;
+        }
+
+    } 
+
+    .position {
+        color: $medium-gray;
+        font-style: normal;
+    }
+}

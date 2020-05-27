@@ -1,0 +1,14 @@
+ <div class="slide">
+    <div class="holder">
+        {% if this['Photo'].size > 0%}
+        <div class="photo">
+            <img src="{{this['Photo']}}?width=91&height=91" alt="{{this['Name']}}">
+        </div>
+        {% endif %}
+        <blockquote class="blockquote">
+            {{this['Description']}}
+            <cite>{{this['Name']}}</cite>
+            <span class="position">{{this['Position']}}</span>
+        </blockquote>
+    </div>
+</div>

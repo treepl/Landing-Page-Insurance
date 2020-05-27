@@ -1,0 +1,33 @@
+.about-section{
+    .decor-ellipse {
+        width: 500px;
+        right: -382px;
+        top: 14px;
+        .svg-content{
+            transform: rotate(-45deg);
+        }
+    }
+
+     .decor-dots {
+        width: 168px;
+        height: 173px;
+        top: 394px;
+        left: calc(100% - 86px);
+    }
+
+    .decor-border-square{
+        left: -94px;
+    bottom: 64px;
+    }
+}
+
+.signature{
+    align-items: center;
+    .name{
+        display: block;
+    }
+}
+
+.text-block{
+    position: relative;
+}

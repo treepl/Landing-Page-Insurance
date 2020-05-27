@@ -1,0 +1,109 @@
+[id="footer"] {
+    padding: rem-calc(55) 0 0;
+    background: $hawkes-blue;
+    color: $success-color;
+
+    [class^="cell"] {
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        margin: rem-calc(-4) 0 rem-calc(10);
+    }
+
+    h3 {
+        text-transform: uppercase;
+
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(28);
+        }
+    }
+
+    a {
+        color: inherit;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    p {
+        margin-bottom: rem-calc(27);
+    }
+
+    address {
+        font-style: normal;
+    }
+}
+
+.footer-row {
+    text-align: center;
+    padding: 10px 10px;
+    border-top: 1px solid rgba($color: $primary-color, $alpha: 0.15);
+    color: rgba($color: $success-color, $alpha: 0.5);
+
+    p {
+        margin: 0;
+    }
+}
+
+.contacts {
+    @extend %listreset;
+
+    li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+    }
+
+    i {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        color: $primary-color;
+    }
+
+    .icon-map-marker{
+        top: 3px;
+    }
+
+    .icon-phone-alt-light{
+        top: 5px;
+    }
+}
+
+.social-networks {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 -10px 20px;
+
+    li {
+        flex: 0;
+        padding: 0 10px;
+    }
+
+    a {
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.add-nav {
+
+    ul {
+        li {
+            padding: 0;
+
+            &:before {
+                display: none;
+            }
+
+            &.selected a {
+                color: $primary-color;
+            }
+        }
+    }
+}

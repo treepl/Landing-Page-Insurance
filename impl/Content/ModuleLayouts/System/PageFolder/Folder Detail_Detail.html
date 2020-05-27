@@ -1,0 +1,12 @@
+{% if this['description'] != "" %}    
+    {{this['description']}}
+{% else %}
+    {% capture indexPage %}{% component type:"module", source:"Page", layout:"Page Detail", filterBy:"parentid", filterValue:"{{this.id}}", limit:"1" %}{% endcapture %}
+    
+    {% if indexPage == "" %}    
+        {% component type:"module", source:"Page", layout:"Page Detail", filterBy:"name", filterValue:"404" %}       
+    {% else %}
+        {{indexPage}}       
+    {% endif %}
+    
+{% endif %}

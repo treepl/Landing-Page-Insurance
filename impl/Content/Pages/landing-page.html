@@ -1,0 +1,24 @@
+<section class="visual-banner">
+    {% component source: "Main visual", layout: "List", filterBy: "id", filterValue: "1887", limit: "1", enablePagination: "false", type: "module" %}
+    <div class="grid-container full">
+        <ul class="advantages-list animateBlock">
+            {% component source: "Advantages", layout: "List", limit: "3", enablePagination: "false", type: "module" %}
+        </ul>
+    </div>
+    <span class="decor-dots"></span>
+    <div class="decor-ellipse">
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="250" cy="250" rx="250" ry="186" />
+        </svg>
+    </div>
+</section>
+{% component type: "snippet", alias: "service_section" %}
+{% component type: "snippet", alias: "dark_section" %}
+{% component type: "snippet", alias: "faqs_section" %}
+{% component type: "snippet", alias: "background_section" %}
+{% component type: "snippet", alias: "testimonials_section" %}
+{% component type: "snippet", alias: "about_section" %}
+{% component type: "snippet", alias: "get_in_touch_section" %}
+
+
+        

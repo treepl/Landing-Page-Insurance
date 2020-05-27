@@ -1,0 +1,1 @@
+<a href="javascript:" data-ecommerce_buy_now_Item="{{this.id}}" class="ecommerceBuyNow_Item system_button">{{this.buttonName | default:"Buy now "}}</a>

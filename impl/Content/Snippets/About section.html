@@ -1,0 +1,54 @@
+<section class="section about-section" id="about">
+    <span class="decor-dots"></span>
+    <div class="decor-ellipse">
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="250" cy="250" rx="250" ry="186"></ellipse>
+        </svg>
+    </div>
+    <span class="decor-border-square"></span>
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x service-block">
+            <div class="cell medium-6 ">
+                <div class="img-block fadeInLeft animateBlock">
+                    <span class="decor-dots left-position"></span>
+                    <img src="/images/img-04.jpg" alt="About Us">
+                </div>
+            </div>
+            <div class="cell medium-6 fadeInRight animateBlock">
+                <div class="text-block">
+                    <h1>About Us</h1>
+                    <h3>SECURE THE FUTURE, PROTECT WHAT'S <br> IMPORTANT</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="signature grid-x grid-margin-x ">
+                        <div class="cell large-6">
+                            <strong class="name">Lena Headey</strong>
+                            <span class="positon">CEO, Insurance Company</span>
+                        </div>
+                        <div class="cell large-6">
+                            <img src="/images/signature.png" alt="signature">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-4">
+                <div class="text-block animateBlock fadeInLeft">
+                    <span class="decor-circle left"></span>
+                    <h1 class="main-title text-left ">Benefits of Buying Health Insurance</h1>
+                    <p>Donec eget consequat diam. Duis convallis placerat dapibus. Donec scelerisque sem non scelerisque rutrum. Cras vestibulum</p>
+                    <a href="#get-quote" class="button secondary">
+                        Get a quote
+                        <i class="arrow-icon"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="cell large-8">
+                <div class="grid-x grid-margin-x">
+                    {% component source: "Info boxes", layout: "List", enablePagination: "false", type: "module" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
