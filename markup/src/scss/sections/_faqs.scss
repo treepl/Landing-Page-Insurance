@@ -19,6 +19,10 @@
     margin-bottom: 30px;
     box-shadow: 0 0 20px 10px rgba($black, .07);
     transition: background $animation-speed ease, color $animation-speed ease;
+    
+    &:focus-within{
+        outline: 2px solid $success-color;
+    }
 
     &:hover {
         color: $white;
@@ -59,6 +63,9 @@
 
     .title{
         margin-right: 30px;
+        a{
+            outline:none;
+        }
     }
 
 
@@ -110,3 +117,32 @@
 p + .faqAccordion{
     margin-top: 25px;
 } 
+
+// .faqs{
+
+//     .faqs-open-close{
+//         // padding-bottom: 41px;
+//     }
+
+//     .opener{
+//        padding-bottom: 41px;
+//        transition: padding $animation-speed linear;
+//     }
+
+//     .active .opener{
+//         padding-bottom: 0;
+//     }
+
+//     h3{
+//         margin: 0;
+//     }
+//     .slide{ 
+//         padding:20px 20px 20px;
+
+//         p{
+//             &:last-child{
+//                 margin: 0;
+//             }
+//         }
+//     }
+// }

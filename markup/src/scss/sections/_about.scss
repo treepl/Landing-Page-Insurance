@@ -45,7 +45,7 @@
     margin-bottom: rem-calc(20);
 
     @include breakpoint(medium) {
-        margin: 0;
+        margin-bottom: 0;
     }
 
     .name {

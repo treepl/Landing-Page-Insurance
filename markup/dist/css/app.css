@@ -14790,6 +14790,8 @@ li {
   margin-bottom: 30px;
   box-shadow: 0 0 20px 10px rgba(10, 10, 10, 0.07);
   transition: background 0.3s ease, color 0.3s ease; }
+  .faqs-open-close:focus-within {
+    outline: 2px solid #0a426f; }
   .faqs-open-close:hover {
     color: #fefefe;
     background: #0a426f; }
@@ -14815,6 +14817,8 @@ li {
         padding: 34px 39px 15px; } }
   .faqs-open-close .title {
     margin-right: 30px; }
+    .faqs-open-close .title a {
+      outline: none; }
   .faqs-open-close .opener {
     position: relative;
     display: block;
@@ -14969,7 +14973,7 @@ p + .faqAccordion {
   margin-bottom: 1.42857rem; }
   @media print, screen and (min-width: 48em) {
     .signature {
-      margin: 0; } }
+      margin-bottom: 0; } }
   .signature .name {
     display: block; }
 

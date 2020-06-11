@@ -11,12 +11,12 @@
                         {% assign part = counter | modulo: 2 %}
                         {% if part == "0" %}
                            <div class="faqs-open-close  fadeInLeft animateBlock">
-                                <div class="opener">
+                                <div  class="opener">
                                     <div class="title">
                                         <div class="icon-block">
                                             {{item['IconHTMLTag']}}
                                         </div>
-                                        <h3>{{item['Name']}}</h3>
+                                        <h3><a href="javasript:;">{{item['Name']}}</a></h3>
                                     </div>
                                     <div class="slide">
                                         {{item['Description']}}
@@ -33,12 +33,12 @@
                         {% assign part = counter | modulo: 2 %}
                         {% if part == "1" %}
                              <div class="faqs-open-close  fadeInRight animateBlock">
-                                <div class="opener">
+                                <div href="javasript:;" class="opener">
                                     <div class="title">
                                         <div class="icon-block">
                                             {{item['IconHTMLTag']}}
                                         </div>
-                                        <h3>{{item['Name']}}</h3>
+                                        <h3><a href="javasript:;">{{item['Name']}}</a></h3>
                                     </div>
                                     <div class="slide">
                                         {{item['Description']}}
