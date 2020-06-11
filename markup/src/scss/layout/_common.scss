@@ -41,8 +41,10 @@
     text-align: center;
     position: relative;
     padding-top: rem-calc(35);
-    padding-bottom: rem-calc(22);
+    padding-bottom: rem-calc(37);
     text-align: center;
+    margin: 0;
+    
 
     &:before,
     &:after {
@@ -101,12 +103,7 @@
     }
 }
 
-.custom-list {
 
-    @include breakpoint(large) {
-        column-count: 2;
-    }
-}
 
 .info-banner {
     @include breakpoint(large) {
@@ -120,10 +117,27 @@
         }
     }
 
-    .mrgn-holder{
+    .mrgn-holder {
         @include breakpoint(large) {
             margin-top: 20px;
             text-align: right;
+        }
+    }
+
+    .custom-list {
+
+        @include breakpoint(large) {
+            column-count: 2;
+        }
+
+        li {
+            margin: 0;
+
+            span {
+                display: inline-block;
+                vertical-align: top;
+                padding-bottom: 11px;
+            }
         }
     }
 
@@ -170,14 +184,17 @@
     @include breakpoint(medium) {
         padding: rem-calc(50) rem-calc(30);
         max-width: calc(100% - 30px);
+        border-radius: 150px 150px 0 150px;
     }
 
     @include breakpoint(large) {
-        // margin: 0 auto;
-        border-radius: 1000px 1000px 0 1000px;
+        padding: rem-calc(80) rem-calc(30);
+        border-radius: 200px 200px 0 200px;
     }
 
     @include breakpoint(xxlarge) {
+        padding: rem-calc(118) rem-calc(30);
+        border-radius: 1000px 1000px 0 1000px;
         max-width: 1672px;
     }
 
@@ -271,6 +288,6 @@
     }
 }
 
-.text-wrapper{
+.text-wrapper {
     margin-bottom: rem-calc(29);
 }
