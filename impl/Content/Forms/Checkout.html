@@ -1,0 +1,83 @@
+<form class="system_form" action="/forms/cases.ashx?form=checkout" name="checkout" method="post" enctype="multipart/form-data">
+    {% component type:"shopping_cart", layout:"" , collectionVariable:"shoppingCartData" %}
+    <h2 class="system_title align_left">Contact Information</h2>
+    <p>* Required Fields</p>
+    <fieldset>
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <input type="text" id="FirstName" placeholder="First Name *" name="FirstName" required>
+                <input type="text" id="LastName" placeholder="Last Name *" name="LastName" required>
+                <input type="email" id="Email" name="Email" placeholder="Email Address *" required>
+            </div>
+            <div class="cms_col_6">
+                <input type="text" id="Phone" placeholder="Phone" name="Phone">
+                <input type="text" id="CompanyName" placeholder="Сompany Name" name="CompanyName">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="system_title align_left">Shipping Address</h2>
+        <p>* Required Fields</p>
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <input type="text" name="Payment_ShippingAddress" id="Payment_ShippingAddress" placeholder="Shipping Address" value="" />
+                <input type="text" name="Payment_ShippingCity" id="Payment_ShippingCity" placeholder="City" value="" />
+            </div>
+            <div class="cms_col_6">
+                <div class="cms_row">
+                    <div class="cms_col_6">
+                        <input type="text" name="Payment_ShippingState" id="Payment_ShippingState" placeholder="State" value="" />
+                    </div>
+                    <div class="cms_col_6">
+                        <input type="text" id="Zip_Code" name="Zip_Code" placeholder="Zip/Postcode" value="" />
+                    </div>
+                </div>
+                 <input type="hidden" name="Payment_ShippingCountry" id="Payment_ShippingCountry" value="{{shoppingCartData.destinationCountry.name}}" />
+                 <input type="text" disabled="disabled" name="PaymentShippingCountry" id="PaymentShippingCountry" value="{{shoppingCartData.destinationCountry.name}}" />
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="system_title align_left">Payment Type</h2>
+        <p>* Required Fields</p>
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <div class="cms_fake_select">
+                    <select id="Payment_Type" name="Payment_Type">
+                        <option value="CreditCard">Credit Card</option>
+                        <option value="Free">Free Payment</option>
+                        <option value="Offline">Offline Payment</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cms_col_6">
+                <div id="paymentFields_{{this.alias}}" class="credit_card_inputs"></div>
+                <input type="hidden" name="Payment_Data" />
+                <div id="paymentErrors_{{this.alias}}" role="alert"></div>
+            {% if shoppingCartData.hasGiftVoucherProducts == true %}
+            <input type="text" name="Payment_GiftVoucher_ReceiverName" value="" required />
+            <input type="text" name="Payment_GiftVoucher_ReceiverEmail" value="" required />
+            <textarea name="Payment_GiftVoucher_ReceiverMessage" required></textarea>
+            {% endif %}
+            </div>
+
+        </div>
+       
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <table class="cms_ecommerce_summary">
+                        <tfoot>
+                            <tr>
+                                <td width="155">Order total</td>
+                                <td style="text-align: left;">
+                                    <input class="payment_amount" type="hidden" id="Payment_Amount" name="Payment_Amount" value="{{shoppingCartData.totalPrice}}" />
+                                    {{shoppingCartData.totalPriceHtml}}
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+            </div>
+        </div>
+        <input type="submit" class="system_button" value="Checkout">
+    </fieldset>
+</form>

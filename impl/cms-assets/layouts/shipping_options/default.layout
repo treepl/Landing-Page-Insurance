@@ -1,8 +1,8 @@
 <div class="cms_fake_select">
-    <select data-cms_cart_shipping_options="">
+    <select data-cms_cart_shipping_options="" data-cms_cart_shipping_option_name_layout="{itemName} ({itemPrice})">
         <option value="">Please select</option>
         {% for item in this.items %}
-        <option value="{{item.Id}}" {% if  shoppingCartData.shippingOption.shippingOptionId == item.id %} selected="true" {% endif %}>{{item.Name}} ({{item.TotalPrice  | domain_money_format }})</option>
+        <option value="{{item.Id}}"  data-product_url="{{item.Url}}" {% if  shoppingCartData.shippingOption.shippingOptionId == item.id %} selected="true" {% endif %}>{{item.Name}} ({{item.Price  | domain_money_format }})</option>
         {% endfor %}
     </select>
 </div>

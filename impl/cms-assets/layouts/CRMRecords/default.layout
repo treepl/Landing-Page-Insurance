@@ -1,0 +1,5 @@
+<ul>
+    {% for contact in this.items %}
+        <li>{{contact.FirstName}} {{contact.LastName}} - {{contact.Email}}</li>
+    {% endfor %}
+</ul>

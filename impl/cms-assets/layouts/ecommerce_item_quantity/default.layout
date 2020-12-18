@@ -1,1 +1,1 @@
-<input type="number" data-ecommerce_product_quantity_field="{{this.id}}" value="1"/>
+<input type="number" data-ecommerce_product_quantity_field="{{this.id}}" {% if this.minimumUnits > 0 %}min="{{this.minimumUnits}}"{% endif %} {% if this.maximumUnits > 0 %}max="{{this.maximumUnits}}"{% endif %} value="{% if this.minimumUnits > 0  and this.params.quantity == null %}{{this.minimumUnits}}{% else %}{{this.params.quantity | default: 1}}{% endif %}"/>

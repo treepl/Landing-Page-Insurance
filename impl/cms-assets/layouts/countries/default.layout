@@ -1,7 +1,4 @@
 {% assign destinationCountryCode = shoppingCartData.destinationCountry.code %}
-{% if  shoppingCartData.destinationCountry.code == "" or shoppingCartData.destinationCountry.code == null%}
- {% assign destinationCountryCode = shoppingCartData.domainCountry.code %}
-{% endif %}
 {% if this.items.size > 0 %}
 <div class="cms_fake_select">
     <select data-cms_cart_countries="">
