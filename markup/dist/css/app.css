@@ -14105,6 +14105,44 @@ ul:not([class]),
     -webkit-transform: translateX(0);
     transform: translateX(0); } }
 
+.pagonation.system.pagination,
+.pagination {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .pagonation.system.pagination ul:not([class]) li,
+  .pagination ul:not([class]) li {
+    padding-left: 0.8rem; }
+  .pagonation.system.pagination ul,
+  .pagination ul {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  .pagonation.system.pagination li .dots,
+  .pagination li .dots {
+    display: none; }
+  .pagonation.system.pagination li::before,
+  .pagination li::before {
+    display: none; }
+  .pagonation.system.pagination li a,
+  .pagination li a {
+    border: none;
+    border-radius: 7px; }
+    .pagonation.system.pagination li a:hover,
+    .pagination li a:hover {
+      background-color: #0b89ee;
+      color: #fff; }
+  .pagonation.system.pagination li .dots,
+  .pagination li .dots {
+    border: none;
+    display: block; }
+  .pagonation.system.pagination li.active a,
+  .pagination li.active a {
+    background-color: #0b89ee;
+    color: #fff; }
+
 [id="header"] {
   position: relative;
   z-index: 100; }

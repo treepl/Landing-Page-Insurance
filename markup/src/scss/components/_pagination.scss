@@ -1,0 +1,44 @@
+.pagonation.system.pagination,
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    ul:not([class]) li {
+        padding-left: 0.8rem;
+    }
+
+    ul {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    li {
+        .dots {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        a {
+            border: none;
+            border-radius: 7px;
+
+            &:hover {
+                background-color: #0b89ee;
+                color: #fff;
+            }
+        }
+
+        .dots {
+            border: none;
+            display: block;
+        }
+    }
+
+    li.active a {
+        background-color: #0b89ee;
+        color: #fff;
+    }
+}
