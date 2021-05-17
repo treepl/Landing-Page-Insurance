@@ -14144,8 +14144,13 @@ ul:not([class]),
     color: #fff; }
 
 [id="header"] {
-  position: relative;
   z-index: 100; }
+  @media print, screen and (min-width: 64em) {
+    [id="header"] {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      left: 0; } }
   [id="header"] .button {
     margin: 0; }
   [id="header"] .anchor-btn {
