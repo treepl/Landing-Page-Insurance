@@ -1,0 +1,13 @@
+<div class="cms_favorites">
+    <h3 class="cms_favorites__title">
+        <a href="{{this.url}}" class="cms_favorites__link">{{this.name}}</a> 
+        <div class="cms_add_favorites {% if this.FavoritesInfo.IsFavorite %}added_to_favorites{% endif %}" data-favorites_holder>
+            <span data-add_to_favorites_link="{{this.FavoritesInfo.AddToFavoritesUrl}}" data-remove_from_favorites_link="{{this.FavoritesInfo.RemoveFromFavoritesUrl}}" onclick="window.addToFavorites(this); return false;"><svg class="cms_add_favorites_trigger" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="16"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+            <script>
+              'use strict';window.addToFavorites=function(b){let c=b.closest("[data-favorites_holder]"),d=b.dataset.add_to_favorites_link,e=b.dataset.remove_from_favorites_link;c.classList.contains("added_to_favorites")?fetch(e+"?jsonResponse=true",{method:"GET"}).then(function(a){if(200===a.status)return!0;401===a.status?window.location=e:alert(a.json().Message)}).then(function(a){c.classList.remove("added_to_favorites")}):fetch(d+"?jsonResponse=true",{method:"GET"}).then(function(a){if(200===a.status)return!0;
+              401===a.status?window.location=d:alert(a.json().Message)}).then(function(a){c.classList.add("added_to_favorites")})};
+            </script>
+        </div>
+    </h3>
+    <p class="cms_favorites__description">{{this.description | strip_html | truncatewords: 10}}</p>
+</div>
