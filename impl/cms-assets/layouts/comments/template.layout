@@ -1,0 +1,59 @@
+<div class="cms_style_holder">
+    <div class="cms_container">
+        <div class="cms_comments cmsCommentsHolder">
+            <div class="comment-list">
+                <div class="cms_add_comment_form">
+                    {% if request.is_logged %}
+                        <form class="cmsCreateThreadForm cms_comments-form" action="/public/api/comment/{{ this.moduleItemId }}?layout={{ this.CommentLayout }}&threadLayout={{this.CommentLayout}}&commentLayout={{this.commentLayout}}">
+                            <div class="cms_add_comment_form__top">
+                                <h3 class="cms_add_comment_form__heading">Add a Comment</h3>
+                                <div class="cms_star cms_star__holder cms_star__holder--right">
+                                    <label for="r1" class="cms_star__title">Rating</label>
+                                    <div class="cms_star__rating">
+                                       
+                                        <input type="radio" value="100" name="rating" id="r5">
+                                        <label for="r5"></label>
+
+                                        <input type="radio" value="80" name="rating" id="r4">
+                                        <label for="r4"></label>
+
+                                        <input type="radio" value="60" name="rating" id="r3">
+                                        <label for="r3"></label>
+
+                                        <input type="radio" value="40" name="rating" id="r2">
+                                        <label for="r2"></label>
+
+                                        <input type="radio" value="20" name="rating" id="r1">
+                                        <label for="r1"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cms_comments-form__body">
+                                <textarea name="postComment" placeholder="Comment" class="cms_comments-form__textarea"></textarea>
+                                <input type="submit" class="system_button" value="Post"/>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+                <hr>
+                <div class="cmsCommentsThreadsHolder">
+                    {% if this.Items.size > 0 %}
+                        {% include "/{{this.CommentLayout}}" %}
+                    {% else %}
+                        <p class="cmsNoCommentsMessage">No comments yet</p>
+                    {% endif %}
+                </div>
+                {% if this.Pagination.CurrentPage < this.Pagination.NumberOfPages %}
+                    <a href="/public/api/comment/flat/load-more/{{ this.moduleItemId }}" data-current_page="{{ this.Pagination.CurrentPage }}" data-number_of_pages="{{ this.Pagination.NumberOfPages }}" data-page="2" data-comment_limit="{{ this.Params.limit }}" data-comment_layout="{{ this.CommentLayout }}" class="cms_comment__button cms_comment__button cms_comment__button--indent cmsFlatLoadMoreButton">
+                        <svg width="14" height="14" aria-hidden="true" focusable="false" data-prefix="fas"
+                             data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10" role="img"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                        </svg>
+                        SHOW MORE</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

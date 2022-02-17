@@ -1,0 +1,30 @@
+<form action="/forms/members/update-member.ashx" method="POST" enctype="multipart/form-data"> 
+   <input type="hidden" name="userid" value="{{this.member.id}}"/>  
+   <label for="email">Email</label>  
+   <input type="text" name="email" value="{{this.member.email}}"/>  
+   <label for="firstName">First name</label>  
+   <input type="text" name="firstName" value="{{this.member.FirstName}}"/>  
+   <label for="lastName">Last name</label>  
+   <input type="text" name="lastName" value="{{this.member.LastName}}"/>  
+   <label for="country">Country</label>  
+   <input type="text" name="country" value="{{this.member.Country}}"/>  
+   <label for="state">State</label>  
+   <input type="text" name="state" value="{{this.member.State}}"/>  
+   <label for="city">City</label>  
+   <input type="text" name="city" value="{{this.member.City}}"/>  
+   <label for="address">Address</label>  
+   <input type="text" name="address" value="{{this.member.Address}}"/>  
+   <label for="zipCode">ZipCode</label>  
+   <input type="text" name="zipCode" value="{{this.member.ZipCode}}"/>  
+   <label for="phone">Phone</label>  
+   <input type="text" name="phone" value="{{this.member.Phone}}"/>  
+   <label for="site">Site</label>  
+   <input type="text" name="site" value="{{this.member.Site}}"/>  
+   <label for="status">Status</label>  
+   <input type="text" name="status"  value="{{this.member.Status}}"/>  
+   <label for="notes">Notes</label>  
+   <input type="text" name="notes"  value="{{this.member.Notes}}"/>
+   <label for="password">Password</label>  
+   <input type="password" name="password">
+   <input type="submit" value="Save">  
+</form>

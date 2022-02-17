@@ -1,0 +1,11 @@
+﻿<form action="/forms/members/update-subscriptions.ashx" method="POST" enctype="multipart/form-data">  
+   <input type="hidden" name="userId" value="{{this.member.id}}"/>  
+    {% for zone in this.member.securezones %}   
+        <input type="hidden" name="SecureZone[{{zone.id}}][id]" value="{{zone.id}}"/>  
+        <input id="SecureZoneSubscribed_{{zone.id}}" type="checkbox" name="SecureZone[{{zone.id}}][isSubscribed]" value="true" {% if zone.isSubscribed == true %}checked="checked"{% endif %} />
+        <label for="SecureZoneSubscribed_{{zone.id}}">{{zone.name}}</label>
+        <label for="SecureZoneExpireDate_{{zone.id}}">Expiry Date</label>
+        <input id="SecureZoneExpireDate_{{zone.id}}" type="datetime-local" name="SecureZone[{{zone.id}}][expiryDateTime]" value="{{zone.expiryDateTime | date: '%Y-%m-%dT%H:%M'}}">
+   {% endfor %}
+   <input type="submit" value="Save">  
+</form>

@@ -1,0 +1,46 @@
+{% for comment in this.items %}
+	<div class="cms_comment cmsCommentHolder">
+		<div class="cms_comment__top">
+			<div class="cms_comment__title">
+				<h3 class="cms_comment__user">{{ comment.AuthorFirstName }} {{ comment.AuthorLastName }}</h3>
+				<time class="cms_comment__date" datetime="2020-02-04">{{ comment.DateAdded | date: '%B %d, %Y at %l:%M %P' }}</time>
+			</div>
+		</div>
+		<div class="cms_comment__content">
+			<p> {{ comment.body | replace: "\n", "<br>" }}</p>
+		</div>
+		<div class="cms_comment__bottom">
+			<div class="cms_comment__buttons">
+                {% if request.is_logged %}
+					<a href="javascript:" class="cms_comment__button cms_comment__button--indent cmsOpenReplyCommentFormButton">
+						<svg width="12" heright="12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="reply" class="svg-inline--fa fa-reply fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+							<path fill="currentColor" d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258 0 61.441-39.581 122.309-83.333 154.132-13.653 9.931-33.111-2.533-28.077-18.631 45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328z"></path>
+						</svg>
+						REPLY</a>
+                {% endif %}
+            </div>
+			{% if comment.Author.Id == request.currentmember.id %}
+				<div class="cms_comment__buttons">
+					<a href="javascript:" class="cms_comment__button cms_comment__button--light cmsOpenEditCommentFormButton">Edit</a>
+					<a href="/public/api/comment/delete/{{ comment.Id }}" class="cms_comment__button cms_comment__button--light cmsDeleteCommentButton">Delete</a>
+				</div>
+			{% endif %}
+		</div>
+		{% if comment.Author.Id == request.currentmember.id %}
+			<div class="cms_comment__form cmsEditCommentFormHolder" style="display: none;">
+				<form class="cmsEditCommentForm" action="/public/api/comment/{{comment.id}}?layout={{this.layout | default: layout}}&threadLayout={{this.layout | default: layout}}&commentLayout={{this.layout | default: layout}}">
+					<textarea name="postComment" id="" cols="30" rows="10" class="cms_comment__textarea">{{ comment.body }}</textarea>
+					<input type="submit" value="Save" class="system_button">
+				</form>
+			</div>
+		{% endif %}
+		<div class="cms_comment__form cmsReplyCommentFormHolder" style="display: none;">
+			<form class="cmsReplyCommentForm" action="/public/api/comment/{{comment.moduleItemId}}/{{comment.id}}?layout={{this.layout | default: layout}}&threadLayout={{this.layout | default: layout}}&commentLayout={{this.layout | default: layout}}"  method="post">
+				<textarea name="postComment" id="" cols="30" rows="10" class="cms_comment__textarea"></textarea>
+				<input type="submit" value="Post" class="system_button" />
+			</form>
+		</div>
+	</div>
+{% endfor %}
+
+

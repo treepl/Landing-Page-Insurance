@@ -1,0 +1,51 @@
+{% for comment in this.items %}
+    <div class="cms_comment cmsCommentHolder">
+        <div class="cms_comment__top">
+            <div class="cms_comment__title">
+                <h3 class="cms_comment__user">{{ comment.AuthorFirstName }} {{ comment.AuthorLastName }}</h3>
+                <time class="cms_comment__date" datetime="2020-02-04">{{ comment.DateAdded | date: '%B %d, %Y at %l:%M %P' }}</time>
+            </div>
+            <div class="cms_star cms_star__holder cms_star__holder--right">
+                <label for="comment-r1-{{comment.Id}}" class="cms_star__title">Rating</label>
+                <div class="cms_star__rating cms_star__rating--onlyread">
+                    
+                    <input type="radio" value="100" name="rating-{{comment.Id}}" id="comment-r5-{{comment.Id}}" {% if comment.Rating == 100 %} checked {% endif %} >
+                    <label for="comment-r5-{{comment.Id}}"></label>
+                    
+                    <input type="radio" value="80" name="rating-{{comment.Id}}" id="comment-r4-{{comment.Id}}" {% if comment.Rating == 80 %} checked {% endif %} >
+                    <label for="comment-r4-{{comment.Id}}"></label>
+                    
+                    <input type="radio" value="60" name="rating-{{comment.Id}}" id="comment-r3-{{comment.Id}}" {% if comment.Rating == 60 %} checked {% endif %} >
+                    <label for="comment-r3-{{comment.Id}}"></label>
+
+                    <input type="radio" value="40" name="rating-{{comment.Id}}" id="comment-r2-{{comment.Id}}" {% if comment.Rating == 40 %} checked {% endif %} >
+                    <label for="comment-r2-{{comment.Id}}"></label>
+
+                    <input type="radio" value="20" name="rating-{{comment.Id}}" id="comment-r1-{{comment.Id}}" {% if comment.Rating == 20 %} checked {% endif %} >
+                    <label for="comment-r1-{{comment.Id}}"></label>
+                </div>
+            </div>
+        </div>
+        <div class="cms_comment__content">
+            <p> {{ comment.body | replace: "\n", "<br>" }}</p>
+        </div>
+        <div class="cms_comment__bottom">
+            {% if comment.Author.Id == request.currentmember.id %}
+                <div class="cms_comment__buttons">
+                    <a href="javascript:" class="cms_comment__button cms_comment__button--light cmsOpenEditCommentFormButton">Edit</a>
+                    <a href="/public/api/comment/delete/{{ comment.Id }}" class="cms_comment__button cms_comment__button--light cmsDeleteCommentButton">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+        {% if comment.Author.Id == request.currentmember.id %}
+            <div class="cms_comment__form cmsEditCommentFormHolder" style="display: none;">
+                <form class="cmsEditCommentForm" action="/public/api/comment/{{ comment.Id }}?layout={{this.CommentLayout}}&threadLayout={{this.CommentLayout}}&commentLayout={{this.commentLayout}}">
+                    <textarea name="postComment" id="" cols="30" rows="10" class="cms_comment__textarea">{{ comment.body }}</textarea>
+                    <input type="submit" value="Save" class="system_button">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+
+
