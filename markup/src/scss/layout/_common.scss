@@ -241,6 +241,7 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+    padding: 26px 0;
 
     .grid-container {
         position: relative;
@@ -250,14 +251,15 @@
         $dots-position: get-vw(86px);
         width: 168px;
         height: 136px;
-        top: get-vw(286px);
+        top: get-vw(206px);
         right: calc(100% - #{ $dots-position});
     }
 
     .decor-ellipse {
         width: get-vw(500px);
         left: get-vw(-339px);
-        top: get-vw(182px);
+        top: get-vw(102px);
+        padding-bottom: 0;
     }
 
     .decor-circle {
@@ -268,7 +270,26 @@
         z-index: -1;
     }
 
+    .decor-border-square {
+        top: get-vw(306px);
+        right: get-vw(-76px);
+    }
 
+    .big-letter {
+        font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+      
+        color: #EA4A6B;
+        @include breakpoint(medium) {
+            font-size: 100px;
+        }
+        @include breakpoint(large) {
+            font-size: 200px;
+            margin-bottom: -66px;
+        }
+    }
 }
 
 .message-holder {
@@ -281,7 +302,6 @@
     position: relative;
     z-index: 1;
     background: $white;
-
 
     @include breakpoint(medium) {
         width: 570px;

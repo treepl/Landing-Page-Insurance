@@ -867,7 +867,6 @@ select {
 button {
   padding: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: 0;
   border-radius: 8px;
@@ -912,7 +911,6 @@ textarea {
   color: #8a8a8a;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none; }
   [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
   textarea:focus {
@@ -936,7 +934,6 @@ textarea[readonly] {
 [type='submit'],
 [type='button'] {
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border-radius: 8px; }
 
@@ -1080,7 +1077,6 @@ select {
   margin: 0 0 1.35714rem;
   padding: 0.71429rem 1.07143rem;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: 1px solid #f3f3f3;
   border-radius: 8px;
@@ -3978,7 +3974,6 @@ a.button:hover, a.button:focus {
   background-color: #f3f3f3;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -ms-touch-action: none;
@@ -4052,7 +4047,6 @@ a.button:hover, a.button:focus {
   font-weight: bold;
   color: #fefefe;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
 
@@ -13836,7 +13830,6 @@ readers do not read off random characters that represent icons */
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -ms-touch-action: pan-y;
@@ -14400,18 +14393,20 @@ li {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  padding: 26px 0; }
   .thank-section .grid-container {
     position: relative; }
   .thank-section .decor-dots {
     width: 168px;
     height: 136px;
-    top: 14.89583vw;
+    top: 10.72917vw;
     right: calc(100% - 4.47917vw); }
   .thank-section .decor-ellipse {
     width: 26.04167vw;
     left: -17.65625vw;
-    top: 9.47917vw; }
+    top: 5.3125vw;
+    padding-bottom: 0; }
   .thank-section .decor-circle {
     position: absolute;
     top: 61px;
@@ -14419,6 +14414,22 @@ li {
     -webkit-transform: none;
     transform: none;
     z-index: -1; }
+  .thank-section .decor-border-square {
+    top: 15.9375vw;
+    right: -3.95833vw; }
+  .thank-section .big-letter {
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: #EA4A6B; }
+    @media print, screen and (min-width: 48em) {
+      .thank-section .big-letter {
+        font-size: 100px; } }
+    @media print, screen and (min-width: 64em) {
+      .thank-section .big-letter {
+        font-size: 200px;
+        margin-bottom: -66px; } }
 
 .message-holder {
   padding: 58px 30px;
