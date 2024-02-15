@@ -51,6 +51,10 @@
                     {% endif %}
                     <input type="number" {% if attribute.required == true %} required{% endif %} name="attr_{{this.eCommerceItemId}}_{{attribute.id}}" value="">
                 {% endfor %}</div>
+            {% when 'userinput' %}
+                <div style="text-align: center" data-attr_group="{{attribute.id}}">
+                     <input type="text" maxlength="250" {% if attribute.required == true %} required{% endif %} name="attr_{{this.eCommerceItemId}}_{{attribute.id}}" value="">
+                </div>
             {% else %}
         {% endcase %}</br>
     {% endfor %}

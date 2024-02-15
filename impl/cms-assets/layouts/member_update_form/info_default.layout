@@ -15,7 +15,23 @@
    <label for="address">Address</label>  
    <input type="text" name="address" value="{{this.member.Address}}"/>  
    <label for="zipCode">ZipCode</label>  
-   <input type="text" name="zipCode" value="{{this.member.ZipCode}}"/>  
+   <input type="text" name="zipCode" value="{{this.member.ZipCode}}"/>
+   <label for="Payment_BillingCountry">Billing Country</label>
+   {% component type:"countries", collectionVariable:"Payment_BillingCountryList", layout:"" %}
+   <select id="MemberAccountForm_Payment_BillingCountry" name="Payment_BillingCountry">
+   <option value="">Please Select</option>
+   {% for country in Payment_BillingCountryList.items %}
+   <option value="{{country.Code}}">{{country.DisplayName}}</option>
+   {% endfor %}
+   </select>
+   <label for="Payment_BillingState">Billing State</label>
+   <input type="text" name="Payment_BillingState" value="{{this.member.BillingState}}">    
+   <label for="Payment_BillingCity">Billing City</label>
+   <input type="text" name="Payment_BillingCity" value="{{this.member.BillingCity}}">
+   <label for="Payment_BillingAddress">Billing Address</label>
+   <input type="text" name="Payment_BillingAddress" value="{{this.member.BillingAddress}}">
+   <label for="Payment_BillingZipCode">Billing ZIPCode</label>
+   <input type="text" name="Payment_BillingZipCode" value="{{this.member.BillingZipCode}}">
    <label for="phone">Phone</label>  
    <input type="text" name="phone" value="{{this.member.Phone}}"/>  
    <label for="site">Site</label>  
@@ -26,5 +42,21 @@
    <input type="text" name="notes"  value="{{this.member.Notes}}"/>
    <label for="password">Password</label>  
    <input type="password" name="password">
+   
+   <script>
+    (function() {
+        var inputs = document.getElementById('MemberAccountForm_Payment_BillingCountry');
+        if (inputs) {
+            var value = '{{this.member.BillingCountry}}';
+            var inputsCount = inputs.length;
+            for (var i = 0; i < inputs.length; i++) {                            
+                    if (value == (inputs.options[i].value)) {
+                        inputs.options[i].selected = true;                        
+                        break;                    
+                }
+            }
+        }
+    })();
+    </script>  
    <input type="submit" value="Save">  
 </form>

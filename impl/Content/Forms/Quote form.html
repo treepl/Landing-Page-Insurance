@@ -1,4 +1,4 @@
-<form class="contact-form" action="/forms/cases.ashx?form=quote_form" name="quote_form"  method="post" enctype="multipart/form-data">
+﻿<form class="contact-form" action="/forms/cases.ashx?form=quote_form" name="quote_form"  method="post" enctype="multipart/form-data">
     <input type="hidden" name="redirectURL" value="/thank-you">
     <label for="FirstName" class="show-for-sr">Name</label>
 	<input type="text" id="FirstName" name="FirstName"   placeholder="Name">
@@ -9,7 +9,8 @@
 	<label for="Notes" class="show-for-sr">Notes</label>
 	<textarea id="Notes" name="Notes" cols="30" rows="3" placeholder="Message" ></textarea>
 	<script>
-     grecaptcha.ready(function() {var theForm = document.querySelector('.g-recaptcha-response-v3-{{this.Alias}}').closest('form');if(theForm != null){var allowRecaptchaExecution = true;var submitCounter = 0;theForm.onsubmit = function(){if(allowRecaptchaExecution){submitCounter++;allowRecaptchaExecution = false;executeRecaptcha(function(){theForm.submit();});return false;}else if(submitCounter > 0){submitCounter++;}if(submitCounter > 1){alert('Form submission is in progress.');return false;}}}else{executeRecaptcha();}	function executeRecaptcha(callback){   grecaptcha.execute('6Ld5QIoUAAAAAKznGOlK7z6mgqJ8ajRUc3CK5M17', { action: 'general_form_{{this.Alias | replace: "-","_"}}'}).then(function(token){document.querySelector('.g-recaptcha-response-v3-{{this.Alias}}').value = token;if(callback){callback();}});}}); 	</script>
-        <input type="hidden" class="g-recaptcha-response-v3-{{this.Alias}}" name="g-recaptcha-response-v3">
+ 		'use strict';grecaptcha.ready(function(){function e(a){grecaptcha.execute("{{this.recaptcha_sitekey}}",{action:'general_form_{{this.Alias | replace: "-","_"}}'}).then(function(b){document.querySelector(".g-recaptcha-response-v3-{{this.Alias}}").value=b;a&&a()})}window.customFormSubmit=new Event("customFormSubmit");let a=document.querySelector(".g-recaptcha-response-v3-{{this.Alias}}").closest("form");if(null!=a){let d=!0,b=0,c=document.getElementById("paymentFields_"+a.getAttribute("name"));a.onsubmit = function(f){f.preventDefault(); if (!a.classList.contains("form-validation-error")){if(d)return b++,d=!1,a.CMS_CustomSubmit=new Event("CMS_CustomSubmit",{cancelable:!0}),e(function(){c?"true"===c.dataset.paymentEnabled?(a.dispatchEvent(window.customFormSubmit),b=0,d=!0):a.dispatchEvent(window.customFormSubmit):(a.CMS_CustomSubmit.data={form:a},a.dispatchEvent(a.CMS_CustomSubmit))}),!1;0<b&&b++;if(1<b)return alert("Form submission is in progress."),!1}};c||a.addEventListener("CMS_CustomSubmit",function(c){ c.defaultPrevented ? (b = 0, d = !0) : a.submit()})}else e()}); 
+	</script>
+	<input type="hidden" class="g-recaptcha-response-v3-{{this.Alias}}" name="g-recaptcha-response-v3">
 	<button class="button secondary" type="submit"> Get a quote<i class="arrow-icon"></i></button>
 </form>

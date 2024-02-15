@@ -169,8 +169,8 @@
 						<blockquote style="margin-left: 50px;">
 							<span style="font-size: 16px;">{{this.customer.firstname}} {{this.customer.lastname}}</span><br />
 							<span style="font-size: 16px;">
-                                        {{this.formSubmissionData.fields.custom.Payment_ShippingAddress.value}}<br />
-                                        {{this.formSubmissionData.fields.custom.Payment_ShippingCity.value}}, {{this.formSubmissionData.fields.custom.Payment_ShippingState.value}} {{this.formSubmissionData.fields.custom.Zip_Code.value}}
+                                        {{this.order.shippingaddress.addressLine}}<br />
+                                        {{this.order.shippingaddress.city}}, {{this.order.shippingaddress.state}} {{this.order.shippingaddress.zipCode}}
                                     </span>
 						</blockquote>
 					</td>

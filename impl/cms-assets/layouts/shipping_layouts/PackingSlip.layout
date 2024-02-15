@@ -165,8 +165,8 @@
 														<td class="pb-15" style="font:14px/21px Tahoma, Arial, sans-serif; color:#444;">
 															<b>Ship To:</b> <br>
 															{{this.customer.firstname}} {{this.customer.lastname}}<br>
-															{{this.formSubmissionData.fields.custom.Payment_ShippingAddress.value}}<br />
-															{{this.formSubmissionData.fields.custom.Payment_ShippingCity.value}}, {{this.formSubmissionData.fields.custom.Payment_ShippingState.value}} {{this.formSubmissionData.fields.custom.Zip_Code.value}}
+															{{this.order.shippingaddress.addressLine}}<br />
+															{{this.order.shippingaddress.city}}, {{this.order.shippingaddress.state}} {{this.order.shippingaddress.zipCode}}
 														</td>
 													</tr>
 												</table>

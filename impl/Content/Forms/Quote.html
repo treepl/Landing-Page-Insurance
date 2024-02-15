@@ -1,0 +1,64 @@
+<form class="system_form" action="/forms/cases.ashx?form=quote" name="quote" method="post" enctype="multipart/form-data">
+    {% component type:"shopping_cart", layout: "", collectionVariable:"shoppingCartData" %}
+    <h2 class="system_title align_left">Contact Information</h2>
+    <p>* Required Fields</p>
+    <fieldset>
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <input type="text" id="FirstName" placeholder="First Name *" name="FirstName" required>
+                <input type="text" id="LastName" placeholder="Last Name *" name="LastName" required>
+                <input type="email" id="Email" name="Email" placeholder="Email Address *" required>
+            </div>
+            <div class="cms_col_6">
+                <input type="text" id="Phone" placeholder="Phone" name="Phone">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="system_title align_left">Shipping Address</h2>
+        <p>* Required Fields</p>
+        <div class="cms_row">
+            <div class="cms_col_6">
+                <input type="text" name="Payment_ShippingAddress" id="Payment_ShippingAddress" placeholder="Shipping Address" value="" />
+                <input type="text" name="Payment_ShippingCity" id="Payment_ShippingCity" placeholder="City" value="" />
+            </div>
+            <div class="cms_col_6">
+                <div class="cms_row">
+                    <div class="cms_col_6">
+                        <input type="text" name="Payment_ShippingState" id="Payment_ShippingState" placeholder="State" value="" />
+                    </div>
+                    <div class="cms_col_6">
+                        <input type="text" id="Payment_ShippingZipCode" name="Payment_ShippingZipCode" placeholder="Zip/Postcode" value="" />
+                    </div>
+                </div>
+				{% component type:"countries", collectionVariable:"Payment_ShippingCountryList", layout:"" %}
+				<select id="Payment_ShippingCountry" name="Payment_ShippingCountry">
+				<option value="">Please Select</option>
+				{% for country in Payment_ShippingCountryList.items %}
+					<option value="{{country.Code}}">{{country.DisplayName}}</option>
+				{% endfor %}
+				</select>
+				<script>
+					(function() {
+						var inputs = document.getElementById('Payment_ShippingCountry');
+						if (inputs) {
+							var value = '{{shoppingCartData.destinationCountry.name}}';
+							var inputsCount = inputs.length;
+							for (var i = 0; i < inputs.length; i++) {                            
+									if (value == (inputs.options[i].value)) {
+										inputs.options[i].selected = true;                        
+										break;                    
+								}
+							}
+						}
+					})();
+				</script>
+            </div>
+        </div>
+		<script>
+			'use strict';grecaptcha.ready(function(){function e(a){grecaptcha.execute("{{this.recaptcha_sitekey}}",{action:'general_form_{{this.Alias | replace: "-","_"}}'}).then(function(b){document.querySelector(".g-recaptcha-response-v3-{{this.Alias}}").value=b;a&&a()})}window.customFormSubmit=new Event("customFormSubmit");let a=document.querySelector(".g-recaptcha-response-v3-{{this.Alias}}").closest("form");if(null!=a){let d=!0,b=0,c=document.getElementById("paymentFields_"+a.getAttribute("name"));a.onsubmit = function(f){f.preventDefault(); if (!a.classList.contains("form-validation-error")){if(d)return b++,d=!1,a.CMS_CustomSubmit=new Event("CMS_CustomSubmit",{cancelable:!0}),e(function(){c?"true"===c.dataset.paymentEnabled?(a.dispatchEvent(window.customFormSubmit),b=0,d=!0):a.dispatchEvent(window.customFormSubmit):(a.CMS_CustomSubmit.data={form:a},a.dispatchEvent(a.CMS_CustomSubmit))}),!1;0<b&&b++;if(1<b)return alert("Form submission is in progress."),!1}};c||a.addEventListener("CMS_CustomSubmit",function(c){ c.defaultPrevented ? (b = 0, d = !0) : a.submit()})}else e()}); 
+		</script>
+		<input type="hidden" class="g-recaptcha-response-v3-{{this.Alias}}" name="g-recaptcha-response-v3">
+        <input type="submit" class="system_button" value="Get a quote">
+    </fieldset>
+</form>

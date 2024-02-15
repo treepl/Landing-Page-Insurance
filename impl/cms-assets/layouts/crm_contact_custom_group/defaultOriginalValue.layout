@@ -1,0 +1,1 @@
+{{this.fields[0].arrayValue  | join:"|||;/;|||"}}
