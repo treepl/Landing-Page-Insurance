@@ -1,5 +1,5 @@
 <div class="system_page">
-{% if formSubmissionData.error >= 1 %}
+{% if formSubmissionData == "" or formSubmissionData.error >= 1 %}
 <svg class="system_svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.843 294.843" style="enable-background:new 0 0 294.843 294.843;" xml:space="preserve">
 <g>
 <path d="M147.421,0C66.133,0,0,66.133,0,147.421s66.133,147.421,147.421,147.421c38.287,0,74.567-14.609,102.159-41.136
@@ -16,7 +16,7 @@ c1.171,1.171,2.707,1.757,4.243,1.757s3.071-0.586,4.243-1.757L214.9,88.428C217.24
 </g>
 </svg>
 <h1 class="system_title">Error</h1>
-<p class="system_text">{{formSubmissionData.errormessages}}</p>
+<p class="system_text">{{formSubmissionData.errormessages | default : "The form wasn't submitted"}}</p>
 {% else %}
 <svg class="system_svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 249.425 249.425" style="enable-background:new 0 0 249.425 249.425;" xml:space="preserve">
 <g>

@@ -2,9 +2,9 @@
     <div class="grid-container">
         <div class="message-holder">
             <div class="main-title">
-                {% if formSubmissionData.error >= 1 %}
+                {% if formSubmissionData == "" or formSubmissionData.error >= 1 %}
                 <h1 class="system_title ">Error!</h1>
-                <p class="system_text">{{formSubmissionData.errormessages}}</p>
+                <p class="system_text">{{formSubmissionData.errormessages | default : "The form wasn't submitted"}}</p>
                 {% else %}
                 <h1 class="system_title ">Thank you!</h1>
                 <p class="system_text">Your request is successfully sent! We will get back to you soon!</p>
