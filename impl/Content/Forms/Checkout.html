@@ -51,9 +51,7 @@
                 </div>
             </div>
             <div class="cms_col_6">
-                <div id="paymentFields_{{this.alias}}" class="credit_card_inputs"></div>
-                <input type="hidden" name="Payment_Data" />
-                <div id="paymentErrors_{{this.alias}}" role="alert"></div>
+            {% component type:"payment_form_fields", formAlias:"{{this.alias}}" %}
             {% if shoppingCartData.hasGiftVoucherProducts == true %}
             <input type="text" name="Payment_GiftVoucher_ReceiverName" value="" required />
             <input type="text" name="Payment_GiftVoucher_ReceiverEmail" value="" required />
