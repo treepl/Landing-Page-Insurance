@@ -35,7 +35,7 @@ var path = {
         img: 'src/sourceimages/**/*.*',
         fonts: 'srs/fonts/**/*.*'
     },
-    clean: './dist/*'
+    clean: './dist'
 };
 
 
@@ -49,21 +49,74 @@ var config = {
 };
 
 
-var gulp = require('gulp'),  
-    webserver = require('browser-sync'), 
-    plumber = require('gulp-plumber'), 
-    rigger = require('gulp-rigger'), 
-    sourcemaps = require('gulp-sourcemaps'), 
-    sass = require('gulp-sass'), 
-    autoprefixer = require('gulp-autoprefixer'), 
-    cleanCSS = require('gulp-clean-css'), 
-    uglify = require('gulp-uglify'), 
-    cache = require('gulp-cache'), 
-    imagemin = require('gulp-imagemin'), 
-    jpegrecompress = require('imagemin-jpeg-recompress'), 
-    pngquant = require('imagemin-pngquant'), 
-    rimraf = require('gulp-rimraf'),
+var nodePath = require('path'),
+    fs = require('fs'),
+    Transform = require('stream').Transform,
+    rimraf = require('rimraf').rimraf;
+
+var gulp = require('gulp'),
+    webserver = require('browser-sync'),
+    plumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps'),
+    sass = require('gulp-sass')(require('sass')),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    cleanCSS = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    sharp = require('sharp'),
     rename = require('gulp-rename');
+
+
+var riggerDirective = /^([ \t]*)\/\/=\s*(.+?)\s*$/gm;
+
+function riggerExpand(content, baseDir) {
+    return content.replace(riggerDirective, function (match, indent, relPath) {
+        var filePath = nodePath.join(baseDir, relPath);
+        var included = fs.readFileSync(filePath, 'utf8');
+        return riggerExpand(included, nodePath.dirname(filePath));
+    });
+}
+
+function rigger() {
+    return new Transform({
+        objectMode: true,
+        transform: function (file, enc, cb) {
+            if (file.isNull() || file.isDirectory()) return cb(null, file);
+            file.contents = Buffer.from(riggerExpand(file.contents.toString(), nodePath.dirname(file.path)));
+            cb(null, file);
+        }
+    });
+}
+
+
+function imageOptimize() {
+    return new Transform({
+        objectMode: true,
+        transform: function (file, enc, cb) {
+            if (file.isNull() || file.isDirectory()) return cb(null, file);
+
+            var ext = nodePath.extname(file.path).toLowerCase();
+            var image = sharp(file.contents);
+
+            if (ext === '.jpg' || ext === '.jpeg') {
+                image = image.jpeg({ quality: 85, progressive: true });
+            } else if (ext === '.png') {
+                image = image.png({ quality: 85, compressionLevel: 9 });
+            } else {
+                return cb(null, file);
+            }
+
+            image.toBuffer()
+                .then(function (buffer) {
+                    file.contents = buffer;
+                    cb(null, file);
+                })
+                .catch(function (err) {
+                    cb(null, file);
+                });
+        }
+    });
+}
 
 
 
@@ -85,12 +138,14 @@ gulp.task('html:build', function () {
 gulp.task('css:build', function () {
     return gulp.src(path.src.style) 
         .pipe(plumber()) 
-        .pipe(sourcemaps.init()) 
-        .pipe(sass()) 
-        .pipe(autoprefixer({ 
-            overrideBrowserslist:  autoprefixerList,
-            cascade: false
-        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(postcss([
+            autoprefixer({
+                overrideBrowserslist: autoprefixerList,
+                cascade: false
+            })
+        ]))
         .pipe(gulp.dest(path.build.css))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleanCSS()) 
@@ -101,12 +156,14 @@ gulp.task('css:build', function () {
 
 gulp.task('css:dist', function () {
     return gulp.src(path.src.style) 
-        .pipe(plumber()) 
-        .pipe(sass()) 
-        .pipe(autoprefixer({ 
-            overrideBrowserslist:  autoprefixerList,
-            cascade: false
-        }))
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(postcss([
+            autoprefixer({
+                overrideBrowserslist: autoprefixerList,
+                cascade: false
+            })
+        ]))
         .pipe(gulp.dest(path.build.css))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleanCSS()) 
@@ -145,29 +202,14 @@ gulp.task('fonts:build', function () {
 
 
 gulp.task('image:build', function () {
-    return gulp.src(path.src.img) 
-        .pipe(cache(imagemin([ 
-            imagemin.gifsicle({ interlaced: true }),
-            jpegrecompress({
-                progressive: true,
-                max: 90,
-                min: 80
-            }),
-            pngquant(),
-            imagemin.svgo({ plugins: [{ removeViewBox: false }] })
-        ])))
-        .pipe(gulp.dest(path.build.img)); 
+    return gulp.src(path.src.img)
+        .pipe(imageOptimize())
+        .pipe(gulp.dest(path.build.img));
 });
 
 
 gulp.task('clean:build', function () {
-    return gulp.src(path.clean, { read: false })
-        .pipe(rimraf());
-});
-
-
-gulp.task('cache:clear', function () {
-    cache.clearAll();
+    return rimraf(path.clean);
 });
 
 
